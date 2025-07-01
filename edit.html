@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Account Settings</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<html>
+<body style="font-family: sans-serif; margin: 0; padding: 0; background-color: #ffffff;">
+
+    <header style="background-color: #ffffff; padding: 20px; border-bottom: 1px solid #eee; display: flex; justify-content: space-between; align-items: center;">
+        <div style="display: flex; align-items: center;">
+            <i class="fa-solid fa-tree"></i>
+            <h1 style="margin: 0; font-size: 1.2em;">Trip Planner</h1>
+        </div>
+
+        <nav>
+            <ul style="list-style: none; padding: 0; margin: 0; display: flex; align-items: center;">
+                <li style="margin-right: 20px;"><a href="#" style="text-decoration: none; color: #777; font-size: 0.9em;">Explore</a></li>
+                <li style="margin-right: 20px;"><a href="#" style="text-decoration: none; color: #777; font-size: 0.9em;">Trips</a></li>
+                <li style="margin-right: 20px;"><a href="#" style="text-decoration: none; color: #777; font-size: 0.9em;">Saved</a></li>
+                <li style="margin-right: 20px;"><a href="#" style="text-decoration: none; color: #777; font-size: 0.9em;">Sign In</a></li>
+                <li style="margin-right: 10px;">
+                    <i class="fa-solid fa-bell"></i>
+                </li>
+                <li>
+                    <img src="images/Image 1.png" alt="Profile" style="width: 30px; height: 30px; border-radius: 50%; cursor: pointer;">
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <div style="display: flex; height: 100vh;">
+
+        <div style="width: 200px; background-color: #ffffff; border-right: 1px solid #eee; padding: 20px;">
+            <ul style="list-style: none; padding: 0; margin: 0;">
+                <li style="margin-bottom: 15px; display: flex; align-items: center; cursor: pointer;padding-top: 50%;">
+                    <i class="fa-solid fa-pencil"></i>
+                    <span style="font-size: 0.9em; color: #333;padding: 2%;">Edit profile</span>
+                </li>
+                <li style="margin-bottom: 15px; display: flex; align-items: center; cursor: pointer; padding-top: 5%;">
+                    <i class="fa-solid fa-bell"></i>
+                    <span style="font-size: 0.9em; color: #777;padding: 2%;">Notification</span>
+                </li>
+                <li style="display: flex; align-items: center; cursor: pointer;  padding-top: 5%;">
+                    <i class="fa-solid fa-circle-question"></i>
+                    <span style="font-size: 0.9em; color: #777;padding: 2%;">Help</span>
+                </li>
+            </ul>
+        </div>
+
+        <div style="flex: 1; padding: 20px;">
+
+            <h1 style="color: #333; margin-bottom: 20px;">Account</h1>
+
+            <div style="display: flex; align-items: center; margin-bottom: 20px;">
+                <img src="images/Image 1.png" alt="Profile Picture" style="width: 80px; height: 80px; border-radius: 50%; margin-right: 20px;">
+                <div>
+                    <h2 style="margin: 0; color: #333; font-size: 1.2em;">Sophia Carter</h2>
+                    <p style="color: #777; font-size: 0.9em;">sophia.carter@bitscollege.edu.et</p>
+                </div>
+            </div>
+
+            <div style="display: flex; justify-content: space-between; margin-bottom: 20px;">
+                <div style="border: 1px solid #eee; padding: 15px; border-radius: 8px; width: 48%;">
+                    <h3 style="margin: 0; color: #333; font-size: 1em;">Trips Taken</h3>
+                    <p style="font-size: 1.5em; color: #556b2f;">15</p>
+                </div>
+                <div style="border: 1px solid #eee; padding: 15px; border-radius: 8px; width: 48%;">
+                    <h3 style="margin: 0; color: #333; font-size: 1em;">Traveler Level</h3>
+                    <p style="font-size: 1.5em; color: #556b2f;">Gold </p>
+                </div>
+            </div>
+
+            <h2 style="color: #333; margin-bottom: 10px; font-size: 1.1em;">Account Settings</h2>
+
+            <form>
+                <div style="margin-bottom: 15px;">
+                    <label for="displayName" style="display: block; color: #777; font-size: 0.9em;">Display Name</label>
+                    <input type="text" id="displayName" name="displayName" style="width: 50%; padding: 8px; border: 1px solid #ccc; border-radius: 5px; box-sizing: border-box;">
+                </div>
+
+                <div style="margin-bottom: 15px;">
+                                        <label for="email" style="display: block; color: #777; font-size: 0.9em;">Email</label>
+                    <input type="email" id="email" name="email" style="width: 50%; padding: 8px; border: 1px solid #ccc; border-radius: 5px; box-sizing: border-box;">
+                </div>
+
+                <div style="margin-bottom: 15px;">
+                    <label for="country" style="display: block; color: #777; font-size: 0.9em;">Country</label>
+                    <input type="text" id="country" name="country" style="width: 50%; padding: 8px; border: 1px solid #ccc; border-radius: 5px; box-sizing: border-box;">
+                </div>
+
+                <div style="margin-bottom: 15px;">
+                    <label for="phoneNumber" style="display: block; color: #777; font-size: 0.9em;">Phone Number</label>
+                    <input type="tel" id="phoneNumber" name="phoneNumber" style="width: 50%; padding: 8px; border: 1px solid #ccc; border-radius: 5px; box-sizing: border-box;">
+                </div>
+
+                <div style="margin-bottom: 15px;">
+                    <label for="password" style="display: block; color: #777; font-size: 0.9em;">Password</label>
+                    <input type="password" id="password" name="password" style="width: 50%; padding: 8px; border: 1px solid #ccc; border-radius: 5px; box-sizing: border-box;">
+                </div>
+
+                <button type="submit" style="background-color: #556b2f; color: white; padding: 10px 20px; border: none; border-radius:5px; cursor: pointer;">Update</button>
+
+            </form>
+
+            <h2 style="color: #333; margin-top: 20px; margin-bottom: 10px; font-size: 1.1em;">Favorite Destinations</h2>
+            <p>Favorite Destinations</p>
+            <input type="text" id="favoriteDestinations" name="favoriteDestinations" style="width: 50%; padding: 8px; border: 1px solid #ccc; border-radius: 5px; box-sizing: border-box; margin-bottom: 15px;">
+
+            <h2 style="color: #333; margin-top: 20px; margin-bottom: 10px; font-size: 1.1em;">Travel Preferences</h2>
+            <p>Interests</p>
+            <input type="text" id="interests" name="interests" style="width: 50%; padding: 8px; border: 1px solid #ccc; border-radius: 5px; box-sizing: border-box; margin-bottom: 15px;">
+        </div>
+    </div>
+
+</body>
+</html>
+
+
