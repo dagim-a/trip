@@ -3,178 +3,197 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Trip Planner - Home</title>
+    <title>HOME Page</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" />
     <link rel="stylesheet" href="home1.css">
 </head>
 <body>
-    <nav class="navbar">
-        <div class="navbar-brand">
-            <img src="images/tree_icon.png" alt="Tree Icon" class="navbar-logo">
-            <h1 class="navbar-title">Trip Planner</h1>
+    <nav class="main-nav">
+        <div class="brand">
+            <i class="fa-solid fa-tree"></i>
+            <h1>Trip Planner</h1>
         </div>
-        <ul class="navbar-links">
-            <li><a href="#" class="nav-link">Home</a></li>
-            <li><a href="#" class="nav-link">My Trip</a></li>
-            <li><a href="#" class="nav-link">Sign Up</a></li>
-            <li><a href="#" class="nav-link">Sign In</a></li>
-            <li><a href="#" class="nav-profile">Profile</a></li>
+        <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">My Trip</a></li>
+            <li><a href="#">Sign Up</a></li>
+            <li><a href="#">Sign In</a></li>
+            <li class="profile-link"><a href="#">Profile</a></li>
         </ul>
     </nav>
-
-    <header class="hero-section">
+    <div class="hero">
         <div class="hero-content">
-            <p class="hero-subtitle">Plan, personalize, and track your perfect trip</p>
-            <p class="hero-title"><strong>From custom itineraries and <br> budget tools to shared plan...</strong></p>
+            <p>Plan, personalize, and track your perfect trip</p>
+            <p><strong>From custom itineraries and <br> budget tools to shared plan...</strong></p>
         </div>
         <div class="hero-search">
-            <input type="text" placeholder="Explore the world with ease" class="search-input">
-            <button class="search-btn">Search</button>
+            <input type="text" placeholder="Explore the world with ease">
+            <button>Search</button>
         </div>
-    </header>
-
-    <section class="features-section">
-        <h2 class="features-title">Unleash Your Wanderlust</h2>
-        <p class="features-desc">Embark on a journey like no other with our comprehensive travel <br> planner. Discover destinations, curate your perfect itinerary...</p>
-        <div class="features-list">
+    </div>
+    <section class="section">
+        <h2>Unleash Your Wanderlust</h2>
+        <p>Embark on a journey like no other with our comprehensive travel <br> planner. Discover destinations, curate your perfect itinerary...</p>
+        <div class="features">
             <div class="feature-card">
-                <div class="feature-icon feature-green">
+                <div class="icon-bg" style="background-color: #aed9a6;">
                     <img src="images/Image 2.png" alt="Graph Icon">
                 </div>
-                <h3 class="feature-heading">Reach New Heights</h3>
-                <p class="feature-text">Elevate your travel <br> experience with our easy- <br>to-use tools and persona...</p>
+                <h3>Reach New Heights</h3>
+                <p>Elevate your travel <br> experience with our easy- <br>to-use tools and persona...</p>
             </div>
             <div class="feature-card">
-                <div class="feature-icon feature-red">
+                <div class="icon-bg" style="background-color: #f2a7a7;">
                     <img src="images/Image 3.png" alt="Map Icon">
                 </div>
-                <h3 class="feature-heading">Unlock Endless Possibilit...</h3>
-                <p class="feature-text">Discover a world of <br> experiences with our <br> intuitive travel planner...</p>
+                <h3>Unlock Endless Possibilit...</h3>
+                <p>Discover a world of <br> experiences with our <br> intuitive travel planner...</p>
             </div>
             <div class="feature-card">
-                <div class="feature-icon feature-yellow">
+                <div class="icon-bg" style="background-color: #f2d379;">
                     <img src="images/Image 4.png" alt="Pin Icon">
                 </div>
-                <h3 class="feature-heading">Embark on Your Journey</h3>
-                <p class="feature-text">Explore new horizons and <br> create lasting memories <br> with our comprehensive tra...</p>
+                <h3>Embark on Your Journey</h3>
+                <p>Explore new horizons and <br> create lasting memories <br> with our comprehensive tra...</p>
             </div>
         </div>
     </section>
-
-    <section class="confidence-section">
-        <h2 class="confidence-title">Plan with Confidence</h2>
-        <p class="confidence-desc">With our powerful travel planner, you can create custom <br> itineraries, track your budget, and manage every detail of...</p>
-        <button class="confidence-btn">Get Started</button>
-    </section>
-
-   <div class="suggested-background">
-    <section class="suggested-section">
-        <h2 class="suggested-title">Suggested Trips</h2>
-        <div class="suggested-list">
-            <div class="suggested-card">
-                <img src="images/Container 44.png" alt="Muir Woods" class="suggested-img">
-                <div class="suggested-info">
-                    <img src="images/user1.jpg" alt="User" class="user-avatar">
-                    <div class="suggested-meta">
-                        <p class="suggested-date">May 1, 2023</p>
-                        <p class="suggested-time">10:00 AM</p>
-                    </div>
-                </div>
-                <p class="suggested-desc">Explore the Redwood Forests</p>
-                <div class="suggested-info">
-                    <img src="images/user1.jpg" alt="User" class="user-avatar">
-                    <div class="suggested-meta">
-                        <p class="suggested-location">Muir Woods, CA</p>
-                        <p class="suggested-time">10:00 AM</p>
-                    </div>
-                </div>
-                <button class="suggested-btn">Book Now</button>
+    <div class="confidence">
+        <h2>Plan with Confidence</h2>
+        <p>With our powerful travel planner, you can create custom <br> itineraries, track your budget, and manage every detail of...</p>
+        <button>Get Started</button>
+    </div>
+    <!-- Suggested Trips Section -->
+    <div class="suggested-trips-section">
+      <section class="suggested-trips">
+        <h2>Suggested Trips</h2>
+        <div class="trips-grid">
+          <div class="trip-card">
+            <img src="images/Container 44.png" alt="Muir Woods">
+            <div class="trip-meta">
+              <img src="user1.jpg" alt="User">
+              <div class="trip-meta-details">
+                <p>May 1, 2023</p>
+                <p>10:00 AM</p>
+              </div>
             </div>
-            <div class="suggested-card">
-                <img src="images/Image 7.png" alt="Your Travel Companion" class="suggested-img">
-                <div class="suggested-info">
-                    <img src="images/user1.jpg" alt="User" class="user-avatar">
-                    <div class="suggested-meta">
-                        <p class="suggested-location">Your Travel Companion...</p>
-                        <p class="suggested-type">Flights</p>
-                    </div>
-                </div>
-                <div class="suggested-info">
-                    <img src="images/user1.jpg" alt="User" class="user-avatar">
-                    <div class="suggested-meta">
-                        <p class="suggested-location">Hotels</p>
-                        <p class="suggested-type">Activities</p>
-                    </div>
-                </div>
-                <button class="suggested-btn">Book Now</button>
+            <p class="trip-title">Explore the Redwood Forests</p>
+            <div class="trip-meta">
+              <img src="user1.jpg" alt="User">
+              <div class="trip-meta-details">
+                <p>Muir Woods, CA</p>
+                <p>10:00 AM</p>
+              </div>
             </div>
-            <div class="suggested-card">
-                <img src="images/Image 1.png" alt="Fisherman's Wharf" class="suggested-img">
-                <div class="suggested-info">
-                    <img src="images/user1.jpg" alt="User" class="user-avatar">
-                    <div class="suggested-meta">
-                        <p class="suggested-location">Fisherman's Wharf</p>
-                        <p class="suggested-type">San Francisco, CA</p>
-                    </div>
-                </div>
-                <p class="suggested-desc">Discover the Golden Gate Bridge</p>
-                <div class="suggested-info">
-                    <img src="images/user1.jpg" alt="User" class="user-avatar">
-                    <div class="suggested-meta">
-                        <p class="suggested-location">Share with Friends</p>
-                        <p class="suggested-type">Collaborate</p>
-                    </div>
-                </div>
-                <button class="suggested-btn">Book Now</button>
+            <button>Book Now</button>
+          </div>
+          <div class="trip-card">
+            <img src="images/Image 7.png" alt="Your Travel Companion">
+            <div class="trip-meta">
+              <img src="user1.jpg" alt="User">
+              <div class="trip-meta-details">
+                <p>Your Travel Companion...</p>
+                <p>Flights</p>
+              </div>
             </div>
-            <div class="suggested-card">
-                <img src="images/Image 8.png" alt="Favorite Destination" class="suggested-img">
-                <div class="suggested-info">
-                    <img src="images/user1.jpg" alt="User" class="user-avatar">
-                    <div class="suggested-meta">
-                        <p class="suggested-location">Favorite Destination...</p>
-                        <p class="suggested-type">Recent Trips</p>
-                    </div>
-                </div>
-                <div class="suggested-info">
-                    <img src="images/user1.jpg" alt="User" class="user-avatar">
-                    <div class="suggested-meta">
-                        <p class="suggested-location">Saved Itineraries</p>
-                        <p class="suggested-type">Upcoming Trips</p>
-                    </div>
-                </div>
-                <button class="suggested-btn">Book Now</button>
+            <div class="trip-meta">
+              <img src="user1.jpg" alt="User">
+              <div class="trip-meta-details">
+                <p>Hotels</p>
+                <p>Activities</p>
+              </div>
             </div>
+            <button>Book Now</button>
+          </div>
+          <div class="trip-card">
+            <img src="images/Image 1.png" alt="Fisherman's Wharf">
+            <div class="trip-meta">
+              <img src="user1.jpg" alt="User">
+              <div class="trip-meta-details">
+                <p>Fisherman's Wharf</p>
+                <p>San Francisco, CA</p>
+              </div>
+            </div>
+            <p class="trip-title">Discover the Golden Gate Bridge</p>
+            <div class="trip-meta">
+              <img src="user1.jpg" alt="User">
+              <div class="trip-meta-details">
+                <p>Share with Friends</p>
+                <p>Collaborate</p>
+              </div>
+            </div>
+            <button>Book Now</button>
+          </div>
+          <div class="trip-card">
+            <img src="images/Image 8.png" alt="Favorite Destination">
+            <div class="trip-meta">
+              <img src="user1.jpg" alt="User">
+              <div class="trip-meta-details">
+                <p>Favorite Destination...</p>
+                <p>Recent Trips</p>
+              </div>
+            </div>
+            <div class="trip-meta">
+              <img src="user1.jpg" alt="User">
+              <div class="trip-meta-details">
+                <p>Saved Itineraries</p>
+                <p>Upcoming Trips</p>
+              </div>
+            </div>
+            <button>Book Now</button>
+          </div>
         </div>
-    </section>
-   </div> 
+      </section>
+    </div>
+    <!-- Hamburger button for mobile (optional, for side menu/modal) -->
+    <button class="hamburger" aria-label="Open menu">&#9776;</button>
 
-    <footer class="footer">
-        <div class="footer-container">
-            <div class="footer-brand">
-                <img src="images/Logo(Footer).png" alt="Trip Plan Logo" class="footer-logo">
+    <!-- Mobile Bottom Navigation -->
+    <nav class="mobile-bottom-nav">
+        <a href="#" class="mobile-nav-item">
+            <i class="fa-solid fa-house"></i>
+            <span class="mobile-nav-label">Home</span>
+        </a>
+        <a href="#" class="mobile-nav-item">
+            <i class="fa-solid fa-suitcase"></i>
+            <span class="mobile-nav-label">My Trip</span>
+        </a>
+        <a href="#" class="mobile-nav-item">
+            <i class="fa-solid fa-user"></i>
+            <span class="mobile-nav-label">Sign In</span>
+        </a>
+        <a href="#" class="mobile-nav-item">
+            <i class="fa-solid fa-user-plus"></i>
+            <span class="mobile-nav-label">Sign Up</span>
+        </a>
+    </nav>
+    <footer>
+        <div class="footer-content">
+            <div>
+                <img src="images/Logo(Footer).png" alt="Trip Plan Logo">
                 <p>© 2025 TripPlan, Inc.<br>All rights reserved.</p>
             </div>
-            <div class="footer-col">
-                <h4 class="footer-heading">Explore</h4>
-                <ul class="footer-list">
+            <div>
+                <h4>Explore</h4>
+                <ul>
                     <li><a href="#">Destinations</a></li>
                     <li><a href="#">Activities</a></li>
                     <li><a href="#">Itineraries</a></li>
                     <li><a href="#">Planner</a></li>
                 </ul>
             </div>
-            <div class="footer-col">
-                <h4 class="footer-heading">Connect</h4>
-                <ul class="footer-list">
+            <div>
+                <h4>Connect</h4>
+                <ul>
                     <li><a href="#">Blog</a></li>
                     <li><a href="#">Support</a></li>
                     <li><a href="#">Community</a></li>
                     <li><a href="#">Partners</a></li>
                 </ul>
             </div>
-            <div class="footer-col">
-                <h4 class="footer-heading">Company</h4>
-                <ul class="footer-list">
+            <div>
+                <h4>Company</h4>
+                <ul>
                     <li><a href="#">About Us</a></li>
                     <li><a href="#">Careers</a></li>
                     <li><a href="#">Press</a></li>
