@@ -101,7 +101,7 @@ body {
 
 .form-remember label {
     font-size: 0.8em;
-    color: #777;
+    color: #000000;
 }
 
 .signin-btn {
@@ -113,34 +113,6 @@ body {
     cursor: pointer;
     font-size: 1em;
     width: 100%;
-}
-
-.signin-or {
-    margin-top: 30px;
-    text-align: center;
-    color: #777;
-    font-size: 0.8em;
-}
-
-.google-btn {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background-color: white;
-    color: #333;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    padding: 12px;
-    margin-top: 20px;
-    width: 100%;
-    cursor: pointer;
-    gap: 10px;
-    font-size: 1em;
-}
-
-.google-btn img {
-    width: 20px;
-    height: 20px;
 }
 
 .signin-footer {

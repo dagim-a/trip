@@ -89,34 +89,6 @@ body {
     width: 100%;
 }
 
-.signup-or {
-    margin-top: 30px;
-    text-align: center;
-    color: #777;
-    font-size: 0.8em;
-}
-
-.google-btn {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background-color: white;
-    color: #333;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    padding: 12px;
-    margin-top: 20px;
-    width: 100%;
-    cursor: pointer;
-    gap: 10px;
-    font-size: 1em;
-}
-
-.google-btn img {
-    width: 20px;
-    height: 20px;
-}
-
 .signup-footer {
     text-align: center;
     margin-top: 30px;
