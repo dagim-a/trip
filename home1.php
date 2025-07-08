@@ -1,3 +1,6 @@
+<?php
+require 'cmsql.php';
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -15,8 +18,8 @@
         </div>
         <ul>
             <li><a href="#">Home</a></li>
-            <li><a href="#">Sign Up</a></li>
-            <li><a href="#">Login</a></li>
+            <li><a href="signup1.php">Sign Up</a></li>
+            <li><a href="signin1.php">Login</a></li>
         </ul>
     </nav>
     <div class="hero">
