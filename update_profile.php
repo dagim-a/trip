@@ -21,7 +21,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $stmt2->bind_param("sssi", $displayName, $country, $phoneNumber, $userId);
 
         if ($stmt1->execute() && $stmt2->execute()) {
-            echo "Profile updated successfully.";
+            $successMessage = "Profile updated successfully.";
+            header("Location: edit1.php?success=" . urlencode($successMessage));
+            exit();
         } else {
             echo "Error updating profile: " . $stmt1->error;
             echo "Error updating profile: " . $stmt2->error;
