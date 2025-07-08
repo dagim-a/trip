@@ -64,6 +64,7 @@ require 'cmsql.php';
                         $result = mysqli_query($conn, "SELECT * FROM user WHERE Id = {$_SESSION['user_id']}");
                         $user = mysqli_fetch_assoc($result);
                         echo $user['Email'];
+
                         ?>
                     </p>
                 </div>
@@ -88,6 +89,7 @@ require 'cmsql.php';
             </div>
             <h2 class="section-title">Account Settings</h2>
             <form class="settings-form" method="POST" action="update_profile.php">
+
                 <div class="form-group">
                     <label for="displayName">Display Name</label>
                     <input type="text" id="displayName" name="displayName">

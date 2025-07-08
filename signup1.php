@@ -7,7 +7,9 @@ if (!empty($_GET['name']) && !empty($_GET['email']) && !empty($_GET['password'])
   $name = htmlspecialchars($_GET['name']);
   $email = htmlspecialchars($_GET['email']);
   $password = htmlspecialchars($_GET['password']);
+
   $password = password_hash($password, PASSWORD_DEFAULT);
+
   $sql = "INSERT INTO user (Email, Password_hash) VALUES ('$email', '$password')";
   $qur = mysqli_query($conn, $sql);
   if (!$qur){
