@@ -51,9 +51,9 @@ $sql = "CREATE TABLE IF NOT EXISTS user_info(
     userId INT,
     FOREIGN KEY (userId) REFERENCES user(Id),
     Name VARCHAR(254) NOT NULL,
-    Phone VARCHAR(15) NOT NULL,
-    Country VARCHAR(100) NOT NULL,
-    Travel_level ENUM('Bronze', 'Silver', 'Gold') NOT NULL,
+    Phone VARCHAR(15) NULL,
+    Country VARCHAR(100) NULL,
+    Travel_level ENUM('Bronze', 'Silver', 'Gold') NOT NULL DEFAULT 'Bronze',
     Travel_preferences TEXT,
     Trip_taken INT NOT NULL DEFAULT 0,
     Favorite_destination VARCHAR(100)

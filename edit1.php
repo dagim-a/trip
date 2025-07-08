@@ -1,3 +1,7 @@
+<?php
+session_start();
+require 'cmsql.php';
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -18,7 +22,7 @@
             <ul class="nav-list">
                 <li><a href="#" class="nav-link">Explore</a></li>
                 <li><a href="#" class="nav-link">Trips</a></li>
-                <li><a href="#" class="nav-link">Log out</a></li>
+                <li><a href="logout.php" class="nav-link">Log out</a></li>
                 <li><i class="fa-solid fa-bell nav-bell"></i></li>
                 <li><img src="images/Image 1.png" alt="Profile" class="nav-profile"></li>
             </ul>
@@ -48,8 +52,20 @@
             <div class="profile-section">
                 <img src="images/Image 1.png" alt="Profile Picture" class="profile-img">
                 <div>
-                    <h2 class="profile-name">Sophia Carter</h2>
-                    <p class="profile-email">sophia.carter@bitscollege.edu.et</p>
+                    <h2 class="profile-name">
+                        <?php
+                        $result = mysqli_query($conn, "SELECT * FROM user_info WHERE userId = {$_SESSION['user_id']}");
+                        $user_info = mysqli_fetch_assoc($result);
+                        echo $user_info['Name'];
+                        ?>
+                    </h2>
+                    <p class="profile-email">
+                        <?php
+                        $result = mysqli_query($conn, "SELECT * FROM user WHERE Id = {$_SESSION['user_id']}");
+                        $user_info = mysqli_fetch_assoc($result);
+                        echo $user_info['Email'];
+                        ?>
+                    </p>
                 </div>
             </div>
             <div class="stats-section">
