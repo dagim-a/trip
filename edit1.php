@@ -62,8 +62,9 @@ require 'cmsql.php';
                     <p class="profile-email">
                         <?php
                         $result = mysqli_query($conn, "SELECT * FROM user WHERE Id = {$_SESSION['user_id']}");
-                        $user_info = mysqli_fetch_assoc($result);
-                        echo $user_info['Email'];
+                        $user = mysqli_fetch_assoc($result);
+                        echo $user['Email'];
+
                         ?>
                     </p>
                 </div>
@@ -71,15 +72,24 @@ require 'cmsql.php';
             <div class="stats-section">
                 <div class="stats-card">
                     <h3>Trips Taken</h3>
-                    <p class="stats-value">15</p>
+                    <p class="stats-value">
+                        <?php
+                        echo $user_info['Trip_taken'];
+                        ?>
+                    </p>
                 </div>
                 <div class="stats-card">
                     <h3>Traveler Level</h3>
-                    <p class="stats-value">Gold</p>
+                    <p class="stats-value">
+                        <?php
+                        echo $user_info['Travel_level'];
+                        ?>
+                    </p>
                 </div>
             </div>
             <h2 class="section-title">Account Settings</h2>
-            <form class="settings-form">
+            <form class="settings-form" method="POST" action="update_profile.php">
+
                 <div class="form-group">
                     <label for="displayName">Display Name</label>
                     <input type="text" id="displayName" name="displayName">
