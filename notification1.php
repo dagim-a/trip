@@ -1,3 +1,10 @@
+<?php
+session_start();
+if (!isset($_SESSION['user_id'])) {
+    header("Location: home1.php");
+    exit();
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -29,16 +36,16 @@
         <aside class="sidebar">
             <ul class="sidebar-list">
                 <li class="sidebar-item">
-                    <i class="fa-solid fa-pencil"></i>
-                    <span>Edit profile</span>
+                    <a href="edit1.php"><i class="fa-solid fa-pencil"></i>
+                    <span>Edit profile</span></a>
                 </li>
                 <li class="sidebar-item">
-                    <i class="fa-solid fa-bell"></i>
-                    <span>Notification</span>
+                    <a href="notification1.php"><i class="fa-solid fa-bell"></i>
+                    <span>Notification</span></a>
                 </li>
                 <li class="sidebar-item">
-                    <i class="fa-solid fa-circle-question"></i>
-                    <span>Help</span>
+                    <a href="#"><i class="fa-solid fa-circle-question"></i>
+                    <span>Help</span></a>
                 </li>
             </ul>
         </aside>

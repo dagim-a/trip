@@ -22,7 +22,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $row = $result->fetch_assoc();
 
     if ($row) {
-      if ($password === $row['Password_hash']) {
+      if (password_verify($password, $row['Password_hash'])) {
         $_SESSION['user_id'] = $row['Id'];
         header("Location: edit1.php");
         exit();

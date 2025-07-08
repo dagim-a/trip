@@ -1,5 +1,12 @@
 <?php
+if (isset($_GET['success'])) {
+    $success = $_GET['success'];
+}
 session_start();
+if (!isset($_SESSION['user_id'])) {
+    header("Location: home1.php");
+    exit();
+}
 require 'cmsql.php';
 ?>
 <!DOCTYPE html>
@@ -33,16 +40,16 @@ require 'cmsql.php';
         <aside class="sidebar">
             <ul class="sidebar-list">
                 <li class="sidebar-item">
-                    <i class="fa-solid fa-pencil"></i>
-                    <span>Edit profile</span>
+                    <a href="edit1.php"><i class="fa-solid fa-pencil"></i>
+                    <span>Edit profile</span></a>
                 </li>
                 <li class="sidebar-item">
-                    <i class="fa-solid fa-bell"></i>
-                    <span>Notification</span>
+                    <a href="notification1.php"><i class="fa-solid fa-bell"></i>
+                    <span>Notification</span></a>
                 </li>
                 <li class="sidebar-item">
-                    <i class="fa-solid fa-circle-question"></i>
-                    <span>Help</span>
+                    <a href="#"><i class="fa-solid fa-circle-question"></i>
+                    <span>Help</span></a>
                 </li>
             </ul>
         </aside>
@@ -91,16 +98,16 @@ require 'cmsql.php';
             <form class="settings-form" method="POST" action="update_profile.php">
 
                 <div class="form-group">
-                    <label for="displayName">Display Name</label>
-                    <input type="text" id="displayName" name="displayName">
+                    <label for="displayName">Display Name (required)</label>
+                    <input type="text" id="displayName" name="displayName" required>
                 </div>
                 <div class="form-group">
-                    <label for="email">Email</label>
-                    <input type="email" id="email" name="email">
+                    <label for="email">Email (required)</label>
+                    <input type="email" id="email" name="email" required>
                 </div>
                 <div class="form-group">
-                    <label for="country">Country</label>
-                    <input type="text" id="country" name="country">
+                    <label for="country">Country (required)</label>
+                    <input type="text" id="country" name="country" required>
                 </div>
                 <div class="form-group">
                     <label for="phoneNumber">Phone Number</label>
@@ -109,6 +116,11 @@ require 'cmsql.php';
                 <div class="form-group">
                     <label for="password">Password</label>
                     <input type="password" id="password" name="password">
+                </div>
+                <div>
+                    <?php if (!empty($success)) {
+                        echo '<div class="notice-message" style="color:green;">' . htmlspecialchars($success) . '</div>';
+                    } ?>
                 </div>
                 <button type="submit" class="update-btn">Update</button>
             </form>
