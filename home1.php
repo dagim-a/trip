@@ -15,8 +15,8 @@
         </div>
         <ul>
             <li><a href="#">Home</a></li>
-            <li><a href="#">Sign Up</a></li>
-            <li><a href="#">Login</a></li>
+            <li><a href="/signup1.html">Sign Up</a></li>
+            <li><a href="/signin1.html">Login</a></li>
         </ul>
     </nav>
     <div class="hero">
