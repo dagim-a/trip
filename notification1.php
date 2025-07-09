@@ -40,6 +40,7 @@ if (!isset($_SESSION['user_id'])) {
             <?php
             require 'cmsql.php';
             $user_id = $_SESSION['user_id'];
+            $hasNotification = false;
             // Get all trips created by this user
             $trip_result = mysqli_query($conn, "SELECT * FROM trip WHERE userId = $user_id");
             while ($trip = mysqli_fetch_assoc($trip_result)) {
@@ -48,15 +49,21 @@ if (!isset($_SESSION['user_id'])) {
                 // Get all bookings for this trip, latest first
                 $booking_result = mysqli_query($conn, "SELECT b.*, u.Name FROM booking b JOIN user_info u ON b.userId = u.userId WHERE b.TripId = $trip_id ORDER BY b.Id DESC");
                 while ($booking = mysqli_fetch_assoc($booking_result)) {
-                    $name = htmlspecialchars($booking['Name']);
-                    echo '<div class="notification-card">';
-                    echo '<div class="notification-info">';
-                    echo '<div class="notification-icon"><i class="fa-solid fa-envelope-open-text"></i></div>';
-                    echo '<div class="notification-text">';
-                    echo '<p class="notification-title">' . $name . ' joined your trip: <b>' . $trip_name . '</b></p>';
-                    echo '</div></div>';
-                    echo '</div>';
+                    if (isset($booking['Name']) && !empty($booking['Name'])) {
+                        $hasNotification = true;
+                        $name = htmlspecialchars($booking['Name']);
+                        echo '<div class="notification-card">';
+                        echo '<div class="notification-info">';
+                        echo '<div class="notification-icon"><i class="fa-solid fa-envelope-open-text"></i></div>';
+                        echo '<div class="notification-text">';
+                        echo '<p class="notification-title">' . $name . ' joined your trip: <b>' . $trip_name . '</b></p>';
+                        echo '</div></div>';
+                        echo '</div>';
+                    }
                 }
+            }
+            if (!$hasNotification) {
+                echo '<h2 style="text-align:center; color:rgb(59, 55, 59); margin-top:40px;">No Notification</h2>';
             }
             ?>
         </main>
