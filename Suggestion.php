@@ -4,28 +4,12 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>My Trips</title>
-  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/Suggestion.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
   <script src="js/script.js"></script>
 </head>
 <body>
-  <header class="topbar">
-    <div class="logo">
-  <i class="fa-solid fa-tree"></i>
-  Trip Planner
-</div>
-
-    <nav class="navbar">
-      <ul class="nav-links">
-        <li><a href="#">Home</a></li>
-        <li><a class="active" href="#">Trips</a></li>
-        <li><a href="#">Suggestion </a></li>
-        <li><a href="#">Sign In</a></li>
-      </ul>
-      <input type="text" id="searchInput" placeholder="Search trips..." />  
-    </nav>
-  </header>
-
+    <?php require 'Component/navbar.php'; ?>
   <main>
       <section class="content">
     <div class="section-header">
