@@ -129,7 +129,7 @@ body {
 
 .signin-image-section {
     flex: 1;
-    background-image: url('images/signin.jpg');
+    background-image: url('../images/signin.jpg');
     background-size: cover;
     background-position: center;
     border-radius: 0 10px 10px 0;

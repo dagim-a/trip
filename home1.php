@@ -3,19 +3,23 @@ require 'cmsql.php';
 ?>
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>HOME Page</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" />
-    <link rel="stylesheet" href="home1.css">
+    <link rel="stylesheet" href="css/home1.css">
 </head>
+
 <body>
     <nav class="main-nav">
-        <a href="home1.php"><div class="brand">
-            <i class="fa-solid fa-tree"></i>
-            <h1>Trip Planner</h1>
-        </div></a>
+        <a href="home1.php">
+            <div class="brand">
+                <i class="fa-solid fa-tree"></i>
+                <h1>Trip Planner</h1>
+            </div>
+        </a>
         <ul>
             <li><a href="home1.php">Home</a></li>
             <li><a href="signup1.php">Sign Up</a></li>
@@ -84,4 +88,5 @@ require 'cmsql.php';
     </nav>
     <?php require 'footer.php'; ?>
 </body>
+
 </html>
