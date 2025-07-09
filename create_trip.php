@@ -164,7 +164,29 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 <div class="trip-list-content">
                     <div class="trip-list-section" id="upcomingSection">
                         <?php
-                        $result = mysqli_query($conn, "SELECT * FROM trip WHERE userId = {$_SESSION['user_id']} AND (status = 'planned' OR status = 'upcoming')");
+                        $user_id = $_SESSION['user_id'];
+                        $booking_result = mysqli_query($conn, "SELECT TripId FROM booking WHERE userId = $user_id");
+                        $trip_ids = [];
+                        while ($row = mysqli_fetch_assoc($booking_result)) {
+                            $trip_ids[] = (int)$row['TripId'];
+                        }
+                        if (!empty($trip_ids)) {
+                            foreach ($trip_ids as $trip_id) {
+                                $trip_result = mysqli_query($conn, "SELECT Trip_name, Start_date, End_date FROM trip WHERE Id = $trip_id");
+                                if ($trip = mysqli_fetch_assoc($trip_result)) {
+                                    echo "<div class='trip-list-item'>";
+                                    echo "<img src='images/Image 1.png' alt='Profile' class='nav-profile'>";
+                                    echo "<div class='trip-list-info'><div class='trip-list-name'><b>" . htmlspecialchars($trip['Trip_name']) . "</b></div>";
+                                    echo "<div class='trip-list-date'>" . htmlspecialchars($trip['Start_date']) . " to " . htmlspecialchars($trip['End_date']) . "</div></div>";
+                                    echo "</div>";
+                                }
+                            }
+                        }
+                        ?>
+                    </div>
+                    <div class="trip-list-section" id="personalSection" style="display:none;">
+                        <?php
+                        $result = mysqli_query($conn, "SELECT * FROM trip WHERE userId = {$_SESSION['user_id']} AND (status = 'planned')");
                         while ($trip = mysqli_fetch_assoc($result)) {
                             echo '<div class="trip-list-item">
                                 <img src="images/Image 1.png" alt="Profile" class="nav-profile">
@@ -189,27 +211,26 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                         }
                         ?>
                     </div>
-                    <div class="trip-list-section" id="personalSection" style="display:none;">
-                        <?php
-                        $result = mysqli_query($conn, "SELECT * FROM trip WHERE userId = {$_SESSION['user_id']} AND status = 'planned'");
-                        while ($trip = mysqli_fetch_assoc($result)) {
-                            echo "<div class='trip-list-item'>";
-                            echo "<img src='images/Image 1.png' alt='Profile' class='nav-profile'>";
-                            echo "<div class='trip-list-info'><div class='trip-list-name'><b>{$trip['Trip_name']}</b></div>";
-                            echo "<div class='trip-list-date'>{$trip['Start_date']} to {$trip['End_date']}</div><div><button>View</button></div></div>";
-                            echo "</div>";
-                        }
-                        ?>
-                    </div>
                     <div class="trip-list-section" id="closedSection" style="display:none;">
                         <?php
-                        $result = mysqli_query($conn, "SELECT * FROM trip WHERE userId = {$_SESSION['user_id']} AND status = 'closed'");
-                        while ($trip = mysqli_fetch_assoc($result)) {
-                            echo "<div class='trip-list-item'>";
-                            echo "<img src='images/Image 1.png' alt='Profile' class='nav-profile'>";
-                            echo "<div class='trip-list-info'><div class='trip-list-name'><b>{$trip['Trip_name']}</b></div>";
-                            echo "<div class='trip-list-date'>{$trip['Start_date']} to {$trip['End_date']}</div></div>";
-                            echo "</div>";
+                        // Show all closed trips that the user has booked
+                        $user_id = $_SESSION['user_id'];
+                        $booking_result = mysqli_query($conn, "SELECT TripId FROM booking WHERE userId = $user_id");
+                        $trip_ids = [];
+                        while ($row = mysqli_fetch_assoc($booking_result)) {
+                            $trip_ids[] = (int)$row['TripId'];
+                        }
+                        if (!empty($trip_ids)) {
+                            foreach ($trip_ids as $trip_id) {
+                                $trip_result = mysqli_query($conn, "SELECT Trip_name, Start_date, End_date FROM trip WHERE Id = $trip_id AND status = 'closed'");
+                                if ($trip = mysqli_fetch_assoc($trip_result)) {
+                                    echo "<div class='trip-list-item'>";
+                                    echo "<img src='images/Image 1.png' alt='Profile' class='nav-profile'>";
+                                    echo "<div class='trip-list-info'><div class='trip-list-name'><b>" . htmlspecialchars($trip['Trip_name']) . "</b></div>";
+                                    echo "<div class='trip-list-date'>" . htmlspecialchars($trip['Start_date']) . " to " . htmlspecialchars($trip['End_date']) . "</div></div>";
+                                    echo "</div>";
+                                }
+                            }
                         }
                         ?>
                     </div>
