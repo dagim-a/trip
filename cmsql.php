@@ -66,3 +66,17 @@ $qur = mysqli_query($conn, $sql);
 if (!$qur) {
     echo "could not create user_info table: " . mysqli_error($conn) . '<br>';
 }
+
+// booking table
+$sql = "CREATE TABLE IF NOT EXISTS Booking(
+    Id INT AUTO_INCREMENT PRIMARY KEY,
+    userId INT NOT NULL,
+    TripId INT NOT NULL,
+    FOREIGN KEY (userId) REFERENCES user(Id),
+    FOREIGN KEY (TripId) REFERENCES Trip(Id)
+)";
+mysqli_select_db($conn, "Trip");
+$qur = mysqli_query($conn, $sql);
+if (!$qur) {
+    echo 'could not create Booking table:' . mysqli_error($conn) . '<br>';
+}
