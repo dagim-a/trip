@@ -1,0 +1,218 @@
+body {
+    font-family: 'Segoe UI', Arial, sans-serif;
+    background: #f6f3ee;
+    margin: 0;
+    padding: 0;
+}
+.header {
+    background: #fff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 18px 40px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+}
+.header-brand {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+.header-title {
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin: 0;
+}
+.header-page{
+    background-image: url(../images/create_home.png);
+    background-size: cover;
+    height: 90vh;
+    background-position: center;
+    padding: 60px 0;
+    color: #fff;
+}
+.header-nav .nav-list {
+    display: flex;
+    align-items: center;
+    gap: 28px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+.header-nav .nav-link {
+    color: #222;
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 1rem;
+    transition: color 0.2s;
+}
+.header-nav .nav-link:hover {
+    color: #1a7f37;
+}
+.nav-bell {
+    font-size: 1.2rem;
+    color: #1a7f37;
+    cursor: pointer;
+}
+.nav-profile {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid #e0e0e0;
+}
+.main-container {
+    max-width: 1200px;
+    margin: 40px auto 0 auto;
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 4px 24px rgba(0,0,0,0.07);
+    padding: 36px 32px 32px 32px;
+}
+.trip-tabs {
+    display: flex;
+    gap: 0;
+    margin-bottom: 32px;
+}
+.trip-list-container{
+    min-height: 75vh;
+}
+.trip-list-item{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 16px;
+    padding: 12px 0;
+    border-bottom: 1px solid #e0e0e0;
+}
+.tab-btn {
+    flex: 1;
+    padding: 14px 0;
+    background: #f6f3ee;
+    border: none;
+    border-radius: 10px 10px 0 0;
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #222;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+.tab-btn.active {
+    background: #fff;
+    color: #1a7f37;
+    border-bottom: 2px solid #1a7f37;
+}
+.trip-form-container {
+    background: #fff;
+    border-radius: 0 0 10px 10px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.03);
+    padding: 32px 18px 24px 18px;
+}
+.trip-form .form-group {
+    margin-bottom: 22px;
+    display: flex;
+    flex-direction: column;
+}
+.trip-form .form-group label {
+    font-weight: 500;
+    margin-bottom: 7px;
+    color: #222;
+}
+.trip-form .form-control,
+.trip-form input[type="text"],
+.trip-form input[type="email"],
+.trip-form input[type="date"],
+.trip-form input[type="number"],
+.trip-form select,
+.trip-form textarea {
+    padding: 10px 12px;
+    border: 1px solid #d6d6d6;
+    border-radius: 6px;
+    font-size: 1rem;
+    background: #f6f3ee;
+    outline: none;
+    transition: border 0.2s;
+}
+.trip-form input[type="file"] {
+    background: #fff;
+    border: none;
+    padding: 0;
+}
+.trip-form .form-row {
+    display: flex;
+    gap: 24px;
+}
+.trip-form textarea {
+    min-height: 60px;
+    resize: vertical;
+}
+.form-actions {
+    display: flex;
+    gap: 18px;
+    margin-top: 18px;
+}
+.save-btn {
+    background: #1a7f37;
+    color: #fff;
+    border: none;
+    padding: 12px 36px;
+    border-radius: 6px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+.save-btn:hover {
+    background: #16682b;
+}
+.cancel-btn {
+    background: #f6f3ee;
+    color: #222;
+    border: none;
+    padding: 12px 36px;
+    border-radius: 6px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+.cancel-btn:hover {
+    background: #e0e0e0;
+}
+.notice-message {
+    margin-bottom: 18px;
+    font-size: 1.1rem;
+    font-weight: 500;
+}
+.footer {
+    background: #f6f3ee;
+    padding: 36px 0 0 0;
+    margin-top: 60px;
+}
+.footer-content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 32px;
+}
+.footer-section {
+    flex: 1 1 180px;
+    margin-bottom: 24px;
+}
+.footer-section h4 {
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+.footer-section ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+.footer-section ul li {
+    margin-bottom: 7px;
+    color: #444;
+    font-size: 0.98rem;
+}
+
