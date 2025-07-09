@@ -14,7 +14,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     if ($stmt->execute()) {
         echo "<script>
                 alert('🎉 You have successfully booked this trip!');
-                window.location.href = 'home1.php';
+                window.location.href = 'Suggestion.php';
               </script>";
     } else {
         echo "<script>
