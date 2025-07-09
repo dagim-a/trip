@@ -11,12 +11,23 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     if (isset($_POST['delete_trip_id'])) {
         $delete_trip_id = intval($_POST['delete_trip_id']);
         $user_id = intval($_SESSION['user_id']);
-        $stmt = $conn->prepare("DELETE FROM trip WHERE Id = ? AND userId = ?");
-        $stmt->bind_param("ii", $delete_trip_id, $user_id);
-        if ($stmt->execute()) {
-            $success = "Trip deleted successfully!";
+        // Check if there are bookings for this trip
+        $booking_check = $conn->prepare("SELECT COUNT(*) FROM booking WHERE TripId = ?");
+        $booking_check->bind_param("i", $delete_trip_id);
+        $booking_check->execute();
+        $booking_check->bind_result($booking_count);
+        $booking_check->fetch();
+        $booking_check->close();
+        if ($booking_count > 0) {
+            $deletedMessage = "Cannot delete: This trip has existing bookings.";
         } else {
-            $success = "Error deleting trip: " . $stmt->error;
+            $stmt = $conn->prepare("DELETE FROM trip WHERE Id = ? AND userId = ?");
+            $stmt->bind_param("ii", $delete_trip_id, $user_id);
+            if ($stmt->execute()) {
+                $deletedMessage = "Trip deleted successfully!";
+            } else {
+                $deletedMessage = "Error deleting trip: " . $stmt->error;
+            }
         }
     } else {
         // Handle trip creation
@@ -140,6 +151,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         </div>
 
         <div class="trip-list-container" id="tripListContainer" style="display:none;">
+            <?php if (!empty($deletedMessage)) {
+                echo '<div class="notice-message" style="color:green;">' . htmlspecialchars($deletedMessage) . '</div>';
+            } ?>
             <div class="trip-list-card">
                 <h2 class="trip-list-title">ACTIVE TRIPS</h2>
                 <div class="trip-list-tabs">
