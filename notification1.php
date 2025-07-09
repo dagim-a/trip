@@ -17,17 +17,17 @@ if (!isset($_SESSION['user_id'])) {
 </head>
 <body>
     <header class="header">
-        <div class="header-brand">
+        <a href="home1.php"><div class="header-brand">
             <i class="fa-solid fa-tree"></i>
             <h1 class="header-title">Trip Planner</h1>
-        </div>
+        </div></a>
         <nav class="header-nav">
             <ul class="nav-list">
-                <li><a href="#" class="nav-link">Explore</a></li>
-                <li><a href="#" class="nav-link">Trips</a></li>
-                <li><a href="#" class="nav-link">Log out</a></li>
-                <li><i class="fa-solid fa-bell nav-bell"></i></li>
-                <li><img src="images/Image 1.png" alt="Profile" class="nav-profile"></li>
+                <li><a href="home1.php" class="nav-link">Explore</a></li>
+                <li><a href="create_trip.php" class="nav-link">Trips</a></li>
+                <li><a href="logout.php" class="nav-link">Log out</a></li>
+                <li><a href="notification1.php"><i class="fa-solid fa-bell nav-bell"></i></a></li>
+                <li><a href="edit1.php"><img src="images/Image 1.png" alt="Profile" class="nav-profile"></a></li>
             </ul>
         </nav>
     </header>
@@ -65,23 +65,5 @@ if (!isset($_SESSION['user_id'])) {
         </main>
     </div>
 
-    <!-- Hamburger button for mobile (optional, for side menu/modal) -->
-    <button class="hamburger" aria-label="Open menu">&#9776;</button>
-
-    <!-- Mobile Bottom Navigation -->
-    <nav class="mobile-bottom-nav">
-        <a href="#" class="mobile-nav-item">
-            <i class="fa-solid fa-compass"></i>
-            <span class="mobile-nav-label">Explore</span>
-        </a>
-        <a href="#" class="mobile-nav-item">
-            <i class="fa-solid fa-suitcase"></i>
-            <span class="mobile-nav-label">Trip</span>
-        </a>
-        <a href="#" class="mobile-nav-item">
-            <i class="fa-solid fa-right-from-bracket"></i>
-            <span class="mobile-nav-label">Log out</span>
-        </a>
-    </nav>
 </body>
 </html>

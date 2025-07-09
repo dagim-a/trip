@@ -43,10 +43,10 @@ if (!empty($_GET['name']) && !empty($_GET['email']) && !empty($_GET['password'])
   <div class="signup-container">
     <div class="signup-card">
       <div class="signup-form-section">
-        <div class="signup-header">
+        <a href="home1.php"><div class="signup-header">
           <i class="fa-solid fa-tree"></i>
           <h1>Trip Planner</h1>
-        </div>
+        </div></a>
         <h2>Sign up</h2>
         <p class="signup-subtext">Sign up to enjoy the feature of Revolutie</p>
         <form>

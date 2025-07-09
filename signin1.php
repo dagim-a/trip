@@ -52,10 +52,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
   <div class="signin-container">
     <div class="signin-card">
       <div class="signin-form-section">
-        <div class="signin-header">
+        <a href="home1.php"><div class="signin-header">
           <i class="fa-solid fa-tree"></i>
           <h1>Trip Planner</h1>
-        </div>
+        </div></a>
         <h2>Sign in</h2>
         <p class="signin-subtext">Please login to continue to your account.</p>
         <?php if (!empty($error)) {

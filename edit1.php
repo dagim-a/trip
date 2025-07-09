@@ -21,16 +21,18 @@ require 'cmsql.php';
 </head>
 <body>
     <header class="header">
-        <div class="header-brand">
-            <i class="fa-solid fa-tree"></i>
-            <h1 class="header-title">Trip Planner</h1>
-        </div>
+        <a href="home1.php">
+            <div class="header-brand">
+                <i class="fa-solid fa-tree"></i>
+                <h1 class="header-title">Trip Planner</h1>
+            </div>
+        </a>
         <nav class="header-nav">
             <ul class="nav-list">
                 <li><a href="#" class="nav-link">Explore</a></li>
-                <li><a href="#" class="nav-link">Trips</a></li>
+                <li><a href="create_trip.php" class="nav-link">Trips</a></li>
                 <li><a href="logout.php" class="nav-link">Log out</a></li>
-                <li><i class="fa-solid fa-bell nav-bell"></i></li>
+                <li><a href="notification1.php"><i class="fa-solid fa-bell nav-bell"></i></a></li>
                 <li><img src="images/Image 1.png" alt="Profile" class="nav-profile"></li>
             </ul>
         </nav>
@@ -132,19 +134,5 @@ require 'cmsql.php';
             <input type="text" id="interests" name="interests" class="single-input">
         </main>
     </div>
-    <nav class="mobile-bottom-nav">
-      <a href="#" class="mobile-nav-item">
-        <i class="fa-solid fa-compass"></i>
-        <span class="mobile-nav-label">Explore</span>
-      </a>
-      <a href="#" class="mobile-nav-item">
-        <i class="fa-solid fa-suitcase"></i>
-        <span class="mobile-nav-label">Trip</span>
-      </a>
-      <a href="#" class="mobile-nav-item">
-        <i class="fa-solid fa-right-from-bracket"></i>
-        <span class="mobile-nav-label">Log out</span>
-      </a>
-    </nav>
 </body>
 </html>
