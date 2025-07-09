@@ -8,13 +8,26 @@ if (!$conn) {
     die('connection failed:' . mysqli_connect_error());
 }
 
+
 $sql = "CREATE DATABASE IF NOT EXISTS Trip";
 if (mysqli_query($conn, $sql)) {
+    mysqli_select_db($conn, "Trip");
 } else {
     echo "could not create database:", mysqli_error($conn);
 }
 
-// Create Trip table
+// Create user table FIRST
+$sql = "CREATE TABLE IF NOT EXISTS user(
+    Id INT AUTO_INCREMENT PRIMARY KEY,
+    Email VARCHAR(254) UNIQUE NOT NULL,
+    Password_hash VARCHAR(60) NOT NULL
+)";
+$qur = mysqli_query($conn, $sql);
+if (!$qur) {
+    echo 'could not create user table:' . mysqli_error($conn) . '<br>';
+}
+
+// Now create Trip table (after user table exists)
 $sql = "CREATE TABLE IF NOT EXISTS Trip(
     Id INT AUTO_INCREMENT PRIMARY KEY,
     img VARCHAR(255) DEFAULT NULL,
@@ -27,23 +40,14 @@ $sql = "CREATE TABLE IF NOT EXISTS Trip(
     transportation_type VARCHAR(100) NOT NULL,
     Number_of_Travelers INT NOT NULL,
     status ENUM('planned', 'in_progress', 'completed', 'canceled') NOT NULL DEFAULT 'planned',
-    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
-    )";
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    userId INT NOT NULL,
+    FOREIGN KEY (userId) REFERENCES user(Id)
+)";
 mysqli_select_db($conn, "Trip");
 $qur = mysqli_query($conn, $sql);
 if (!$qur) {
     echo 'could not create Trip table:' . mysqli_error($conn) . '<br>';
-}
-
-// Create user table
-$sql = "CREATE TABLE IF NOT EXISTS user(
-    Id INT AUTO_INCREMENT PRIMARY KEY,
-    Email VARCHAR(254) UNIQUE NOT NULL,
-    Password_hash VARCHAR(60) NOT NULL
-)";
-$qur = mysqli_query($conn, $sql);
-if (!$qur) {
-    echo 'could not create user table:' . mysqli_error($conn) . '<br>';
 }
 
 // Create user_info table

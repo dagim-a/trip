@@ -12,12 +12,12 @@ require 'cmsql.php';
 </head>
 <body>
     <nav class="main-nav">
-        <div class="brand">
+        <a href="home1.php"><div class="brand">
             <i class="fa-solid fa-tree"></i>
             <h1>Trip Planner</h1>
-        </div>
+        </div></a>
         <ul>
-            <li><a href="#">Home</a></li>
+            <li><a href="home1.php">Home</a></li>
             <li><a href="signup1.php">Sign Up</a></li>
             <li><a href="signin1.php">Login</a></li>
         </ul>

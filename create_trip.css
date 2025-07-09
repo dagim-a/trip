@@ -22,6 +22,14 @@ body {
     font-weight: 700;
     margin: 0;
 }
+.header-page{
+    background-image: url(images/create_home.png);
+    background-size: cover;
+    height: 90vh;
+    background-position: center;
+    padding: 60px 0;
+    color: #fff;
+}
 .header-nav .nav-list {
     display: flex;
     align-items: center;
@@ -53,7 +61,7 @@ body {
     border: 2px solid #e0e0e0;
 }
 .main-container {
-    max-width: 900px;
+    max-width: 1200px;
     margin: 40px auto 0 auto;
     background: #fff;
     border-radius: 12px;
@@ -64,6 +72,17 @@ body {
     display: flex;
     gap: 0;
     margin-bottom: 32px;
+}
+.trip-list-container{
+    min-height: 75vh;
+}
+.trip-list-item{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 16px;
+    padding: 12px 0;
+    border-bottom: 1px solid #e0e0e0;
 }
 .tab-btn {
     flex: 1;
@@ -86,7 +105,7 @@ body {
     background: #fff;
     border-radius: 0 0 10px 10px;
     box-shadow: 0 2px 8px rgba(0,0,0,0.03);
-    padding: 32px 24px 24px 24px;
+    padding: 32px 18px 24px 18px;
 }
 .trip-form .form-group {
     margin-bottom: 22px;
