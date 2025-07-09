@@ -11,27 +11,12 @@ if (!isset($_SESSION['user_id'])) {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Notification</title>
-    <link rel="stylesheet" href="notification1.css">
+    <link rel="stylesheet" href="css/notification1.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
 </head>
 <body>
-    <header class="header">
-        <a href="home1.php"><div class="header-brand">
-            <i class="fa-solid fa-tree"></i>
-            <h1 class="header-title">Trip Planner</h1>
-        </div></a>
-        <nav class="header-nav">
-            <ul class="nav-list">
-                <li><a href="home1.php" class="nav-link">Explore</a></li>
-                <li><a href="create_trip.php" class="nav-link">Trips</a></li>
-                <li><a href="logout.php" class="nav-link">Log out</a></li>
-                <li><a href="notification1.php"><i class="fa-solid fa-bell nav-bell"></i></a></li>
-                <li><a href="edit1.php"><img src="images/Image 1.png" alt="Profile" class="nav-profile"></a></li>
-            </ul>
-        </nav>
-    </header>
-
+        <?php require 'Component/navbar.php'; ?>
     <div class="main-container">
         <aside class="sidebar">
             <ul class="sidebar-list">

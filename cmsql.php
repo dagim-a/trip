@@ -39,6 +39,7 @@ $sql = "CREATE TABLE IF NOT EXISTS Trip(
     Email VARCHAR(254) NOT NULL,
     transportation_type VARCHAR(100) NOT NULL,
     Number_of_Travelers INT NOT NULL,
+    Trip_cost DECIMAL(10, 2) NULL,
     status ENUM('planned', 'in_progress', 'completed', 'canceled') NOT NULL DEFAULT 'planned',
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
     userId INT NOT NULL,

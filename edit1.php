@@ -22,24 +22,7 @@ require 'cmsql.php';
 </head>
 
 <body>
-    <header class="header">
-        <a href="home1.php">
-            <div class="header-brand">
-                <i class="fa-solid fa-tree"></i>
-                <h1 class="header-title">Trip Planner</h1>
-            </div>
-        </a>
-        <nav class="header-nav">
-            <ul class="nav-list">
-                <li><a href="Suggestion.php" class="nav-link">Explore</a></li>
-                <li><a href="create_trip.php" class="nav-link">Trips</a></li>
-                <li><a href="logout.php" class="nav-link">Log out</a></li>
-                <li><a href="notification1.php"><i class="fa-solid fa-bell nav-bell"></i></a></li>
-                <li><img src="images/Image 1.png" alt="Profile" class="nav-profile"></li>
-            </ul>
-        </nav>
-    </header>
-
+    <?php require 'Component/navbar.php'; ?>
     <div class="main-container">
         <aside class="sidebar">
             <ul class="sidebar-list">
@@ -58,7 +41,6 @@ require 'cmsql.php';
             </ul>
         </aside>
         <main class="content">
-            <button class="hamburger" aria-label="Open menu">&#9776;</button>
             <h1 class="content-title">Account</h1>
             <div class="profile-section">
                 <img src="images/Image 1.png" alt="Profile Picture" class="profile-img">
