@@ -52,6 +52,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
 <body>
     <?php require 'Component/navbar.php'; ?>
+
     <div class="main-container">
         <div class="trip-tabs">
             <button class="tab-btn active" id="createTripTab">Create Trip</button>

@@ -32,7 +32,12 @@ $result = mysqli_query($conn, $sql);
         <div class="trip-info">
           <h2><?php echo htmlspecialchars($trip['Trip_name']); ?></h2>
           <p><small><?php echo htmlspecialchars($trip['Start_date']) . " – " . htmlspecialchars($trip['End_date']); ?></small></p>
-          <button class="book-btn">Book Now</button>
+          <p>Available Number of Travelers: <?php echo htmlspecialchars($trip['Number_of_Travelers']); ?></p>
+          <form action="book_trip.php" method="POST">
+            <input type="hidden" name="userId" value="<?php echo $current_user_id; ?>">
+            <input type="hidden" name="tripId" value="<?php echo $trip['Id']; ?>"> 
+            <button class="book-btn" type="submit">Book Now</button>
+          </form>
         </div>
         <img src="<?php echo htmlspecialchars($trip['img'] ?? 'images/default.png'); ?>" alt="<?php echo htmlspecialchars($trip['Trip_name']); ?>" />
       </li>
