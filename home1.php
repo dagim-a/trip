@@ -86,7 +86,7 @@ require 'cmsql.php';
             <span class="mobile-nav-label">Login</span>
         </a>
     </nav>
-    <?php require 'footer.php'; ?>
+    <?php require 'Components/footer.php'; ?>
 </body>
 
 </html>

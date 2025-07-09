@@ -15,6 +15,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $email = $_POST['email'] ?? '';
     $transportation = $_POST['transportation'] ?? '';
     $travelers = $_POST['travelers'] ?? '';
+    $travelCost = $_POST['travel_cost'] ?? 0;
     $coverPhoto = $_FILES['coverPhoto'] ?? null;
     $success = "Trip created successfully! (Demo only)";
 
@@ -24,8 +25,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $uploadFile = $uploadDir . basename($coverPhoto['name']);
         if (move_uploaded_file($coverPhoto['tmp_name'], $uploadFile)) {
 
-            $stmt = $conn->prepare("INSERT INTO Trip (img, Trip_name, Destination, Start_date, End_date, Trip_description, Email, transportation_type, Number_of_Travelers, userId) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
-            $stmt->bind_param("sssssisssi", $uploadFile, $tripName, $destination, $startDate, $endDate, $description, $email, $transportation, $travelers, $_SESSION['user_id']);
+            $stmt = $conn->prepare("INSERT INTO Trip (img, Trip_name, Destination, Start_date, End_date, Trip_description, Email, transportation_type, Number_of_Travelers, Trip_cost, userId) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
+            $stmt->bind_param("sssssisssid", $uploadFile, $tripName, $destination, $startDate, $endDate, $description, $email, $transportation, $travelers, $travelCost, $_SESSION['user_id']);
             if ($stmt->execute()) {
                 $success = "Trip created successfully!";
             } else {
@@ -45,33 +46,12 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Create Trip</title>
     <link rel="stylesheet" href="css/create_trip.css">
+
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" />
 </head>
 
 <body>
-    <header class="header">
-        <a href="home1.php">
-            <div class="header-brand">
-                <i class="fa-solid fa-tree"></i>
-                <h1 class="header-title">Trip Planner</h1>
-            </div>
-        </a>
-        <nav class="header-nav">
-            <ul class="nav-list">
-                <li><a href="#" class="nav-link">Explore</a></li>
-                <li><a href="create_trip.php" class="nav-link">Trips</a></li>
-                <li><a href="logout.php" class="nav-link">Log out</a></li>
-                <li><a href="notification1.php"><i class="fa-solid fa-bell nav-bell"></i></a></li>
-                <li><a href="edit1.php"><img src="images/Image 1.png" alt="Profile" class="nav-profile"></a></li>
-            </ul>
-        </nav>
-    </header>
-    <main>
-        <div class="header-page">
-            <h2>Create a Trip</h2>
-            <p>Plan your next adventure with us!</p>
-        </div>
-    </main>
+    <?php require 'Component/navbar.php'; ?>
     <div class="main-container">
         <div class="trip-tabs">
             <button class="tab-btn active" id="createTripTab">Create Trip</button>
@@ -133,6 +113,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                         <label for="travelers">Number of Travelers</label>
                         <input type="number" id="travelers" name="travelers" min="1" value="1" required>
                     </div>
+                    <div class="form-group">
+                        <label for="travel_cost">Travel Cost</label>
+                        <input type="number" id="travel_cost" name="travel_cost" min="1" value="200" required>
+                    </div>
                 </div>
                 <div class="form-actions">
                     <button type="submit" class="save-btn">Save</button>
@@ -148,7 +132,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                     <button class="trip-list-tab trip-list-tab-active" id="upcomingTab">Upcoming Events</button>
                     <button class="trip-list-tab" id="personalTab">Personal Trip</button>
                     <button class="trip-list-tab" id="closedTab">Closed Trip</button>
-                </div>
+                </div></br>
                 <div class="trip-list-content">
                     <div class="trip-list-section" id="upcomingSection">
                         <?php
@@ -189,9 +173,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 </div>
             </div>
         </div>
-    </div>
-    <?php require 'footer.php'; ?>
+    </div></br></br>
     <script src="js/script.js"></script>
+    <?php require 'Component/footer.php'; ?>
 </body>
 
 </html>

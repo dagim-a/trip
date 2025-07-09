@@ -1,68 +1,17 @@
 body {
     font-family: 'Segoe UI', Arial, sans-serif;
-    background: #f6f3ee;
-    margin: 0;
-    padding: 0;
-}
-.header {
-    background: #fff;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 18px 40px;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.04);
-}
-.header-brand {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-}
-.header-title {
-    font-size: 1.5rem;
-    font-weight: 700;
-    margin: 0;
-}
-.header-page{
-    background-image: url(../images/create_home.png);
+    background-image: url(/trip/images/create_home.png);
     background-size: cover;
-    height: 90vh;
     background-position: center;
-    padding: 60px 0;
-    color: #fff;
-}
-.header-nav .nav-list {
-    display: flex;
-    align-items: center;
-    gap: 28px;
-    list-style: none;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
     margin: 0;
     padding: 0;
 }
-.header-nav .nav-link {
-    color: #222;
-    text-decoration: none;
-    font-weight: 500;
-    font-size: 1rem;
-    transition: color 0.2s;
-}
-.header-nav .nav-link:hover {
-    color: #1a7f37;
-}
-.nav-bell {
-    font-size: 1.2rem;
-    color: #1a7f37;
-    cursor: pointer;
-}
-.nav-profile {
-    width: 36px;
-    height: 36px;
-    border-radius: 50%;
-    object-fit: cover;
-    border: 2px solid #e0e0e0;
-}
+
 .main-container {
     max-width: 1200px;
-    margin: 40px auto 0 auto;
+    margin: 40px auto auto auto;
     background: #fff;
     border-radius: 12px;
     box-shadow: 0 4px 24px rgba(0,0,0,0.07);
