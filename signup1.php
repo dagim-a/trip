@@ -8,6 +8,7 @@ if (!empty($_GET['name']) && !empty($_GET['email']) && !empty($_GET['password'])
   $email = htmlspecialchars($_GET['email']);
   $password = htmlspecialchars($_GET['password']);
 
+
   // Check if email already exists
   $check = mysqli_query($conn, "SELECT Id FROM user WHERE Email = '$email'");
   if (mysqli_num_rows($check) > 0) {
