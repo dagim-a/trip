@@ -103,7 +103,7 @@ body {
 
 .signup-image-section {
     flex: 1;
-    background-image: url('images/signup.jpg');
+    background-image: url('../images/signup.jpg');
     background-size: cover;
     background-position: center;
     border-radius: 0 10px 10px 0;

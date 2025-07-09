@@ -42,7 +42,7 @@ body {
     border-radius: 15px;
 }
 .hero {
-    background-image: url('images/Section 1.png');
+    background-image: url('../images/Section 1.png');
     height: 100vh;
     background-size: cover;
     background-position: center;
@@ -137,7 +137,7 @@ body {
     font-size: 0.9em;
 }
 .confidence {
-    background-image: url('images/Section 4.png');
+    background-image: url('../images/Section 4.png');
     background-size: cover;
     background-position: center;
     color: white;
@@ -348,14 +348,4 @@ footer {
 /* Hide hamburger by default, show only on mobile */
 .hamburger {
     display: none;
-}
-
-/* Hide mobile nav on desktop */
-@media (min-width: 601px) {
-    .mobile-bottom-nav {
-        display: none !important;
-    }
-    .hamburger {
-        display: none !important;
-    }
 }

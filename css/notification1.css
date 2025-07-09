@@ -280,14 +280,4 @@ body {
     display: none;
 }
 
-/* Hide mobile nav on desktop */
-@media (min-width: 601px) {
-    .mobile-bottom-nav {
-        display: none !important;
-    }
-    .hamburger {
-        display: none !important;
-    }
-}
-
 

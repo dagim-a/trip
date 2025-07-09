@@ -23,7 +23,7 @@ body {
     margin: 0;
 }
 .header-page{
-    background-image: url(images/create_home.png);
+    background-image: url(../images/create_home.png);
     background-size: cover;
     height: 90vh;
     background-position: center;
@@ -215,26 +215,4 @@ body {
     color: #444;
     font-size: 0.98rem;
 }
-@media (max-width: 900px) {
-    .main-container {
-        padding: 18px 6px 18px 6px;
-    }
-    .footer-content {
-        flex-direction: column;
-        gap: 18px;
-    }
-}
-@media (max-width: 600px) {
-    .main-container {
-        margin: 0;
-        border-radius: 0;
-        box-shadow: none;
-    }
-    .trip-form .form-row {
-        flex-direction: column;
-        gap: 0;
-    }
-    .footer-content {
-        padding: 0 8px;
-    }
-}
+
