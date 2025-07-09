@@ -8,22 +8,28 @@ if (!empty($_GET['name']) && !empty($_GET['email']) && !empty($_GET['password'])
   $email = htmlspecialchars($_GET['email']);
   $password = htmlspecialchars($_GET['password']);
 
-  $password = password_hash($password, PASSWORD_DEFAULT);
 
-  $sql = "INSERT INTO user (Email, Password_hash) VALUES ('$email', '$password')";
-  $qur = mysqli_query($conn, $sql);
-  if (!$qur) {
-    echo "Error: " . mysqli_error($conn);
+  // Check if email already exists
+  $check = mysqli_query($conn, "SELECT Id FROM user WHERE Email = '$email'");
+  if (mysqli_num_rows($check) > 0) {
+    echo "<p style='color:red;'>This email is already registered. Please use another email.</p>";
   } else {
-    $userId = mysqli_insert_id($conn);
-    $sql = "INSERT INTO user_info (userId, Name) VALUES ('$userId', '$name')";
+    $password = password_hash($password, PASSWORD_DEFAULT);
+    $sql = "INSERT INTO user (Email, Password_hash) VALUES ('$email', '$password')";
     $qur = mysqli_query($conn, $sql);
     if (!$qur) {
       echo "Error: " . mysqli_error($conn);
     } else {
-      $_SESSION['user_id'] = $userId;
-      header("Location: edit1.php");
-      exit();
+      $userId = mysqli_insert_id($conn);
+      $sql = "INSERT INTO user_info (userId, Name) VALUES ('$userId', '$name')";
+      $qur = mysqli_query($conn, $sql);
+      if (!$qur) {
+        echo "Error: " . mysqli_error($conn);
+      } else {
+        $_SESSION['user_id'] = $userId;
+        header("Location: edit1.php");
+        exit();
+      }
     }
   }
 }
