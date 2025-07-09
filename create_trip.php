@@ -172,12 +172,30 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                         }
                         if (!empty($trip_ids)) {
                             foreach ($trip_ids as $trip_id) {
-                                $trip_result = mysqli_query($conn, "SELECT Trip_name, Start_date, End_date FROM trip WHERE Id = $trip_id");
+                                $trip_result = mysqli_query($conn, "SELECT * FROM trip WHERE Id = $trip_id");
                                 if ($trip = mysqli_fetch_assoc($trip_result)) {
+                                    $desc = htmlspecialchars($trip['Trip_description']);
+                                    $img = isset($trip['img']) ? htmlspecialchars($trip['img']) : 'images/Image 1.png';
+                                    $title = htmlspecialchars($trip['Trip_name']);
                                     echo "<div class='trip-list-item'>";
                                     echo "<img src='images/Image 1.png' alt='Profile' class='nav-profile'>";
-                                    echo "<div class='trip-list-info'><div class='trip-list-name'><b>" . htmlspecialchars($trip['Trip_name']) . "</b></div>";
-                                    echo "<div class='trip-list-date'>" . htmlspecialchars($trip['Start_date']) . " to " . htmlspecialchars($trip['End_date']) . "</div></div>";
+                                    echo "<div class='trip-list-info'><div class='trip-list-name'><b>" . $title . "</b></div>";
+                                    echo "<div class='trip-list-date'>" . htmlspecialchars($trip['Start_date']) . " to " . htmlspecialchars($trip['End_date']) . "</div>";
+                                    echo "<div><button class='view-btn' 
+                                                data-trip-id='" . $trip['Id'] . "'
+                                                data-img='" . htmlspecialchars($trip['img']) . "'
+                                                data-title='" . $title . "'
+                                                data-destination='" . htmlspecialchars($trip['Destination']) . "'
+                                                data-start='" . htmlspecialchars($trip['Start_date']) . "'
+                                                data-end='" . htmlspecialchars($trip['End_date']) . "'
+                                                data-desc='" . $desc . "'
+                                                data-email='" . htmlspecialchars($trip['Email']) . "'
+                                                data-transportation='" . htmlspecialchars($trip['transportation_type']) . "'
+                                                data-travelers='" . htmlspecialchars($trip['Number_of_Travelers']) . "'
+                                                data-cost='" . htmlspecialchars($trip['Trip_cost']) . "'
+                                                data-status='" . htmlspecialchars($trip['status']) . "'
+                                                style='border: none; padding: 7px 15px;'>View</button></div>";
+                                    echo "</div>";
                                     echo "</div>";
                                 }
                             }
@@ -188,16 +206,32 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                         <?php
                         $result = mysqli_query($conn, "SELECT * FROM trip WHERE userId = {$_SESSION['user_id']} AND (status = 'planned')");
                         while ($trip = mysqli_fetch_assoc($result)) {
+                            $desc = htmlspecialchars($trip['Trip_description']);
+                            $img = isset($trip['img']) ? htmlspecialchars($trip['img']) : 'images/Image 1.png';
+                            $title = htmlspecialchars($trip['Trip_name']);
                             echo '<div class="trip-list-item">
                                 <img src="images/Image 1.png" alt="Profile" class="nav-profile">
                                 <div style="display:flex; flex-direction:row; justify-content:space-between; width:100%;">
                                     <div class="trip-list-info">
-                                        <div class="trip-list-name"><b>' . htmlspecialchars($trip['Trip_name']) . '</b></div>
+                                        <div class="trip-list-name"><b>' . $title . '</b></div>
                                         <div class="trip-list-date">' . htmlspecialchars($trip['Start_date']) . ' to ' . htmlspecialchars($trip['End_date']) . '</div>
                                     </div>
                                     <div style="display:flex; flex-direction: row; gap: 10px;">
                                         <div>
-                                            <button style="border: none; padding: 7px 15px;">View</button>
+                                            <button class="view-btn" 
+                                                data-trip-id="' . $trip['Id'] . '"
+                                                data-img="' . htmlspecialchars($trip['img']) . '"
+                                                data-title="' . $title . '"
+                                                data-destination="' . htmlspecialchars($trip['Destination']) . '"
+                                                data-start="' . htmlspecialchars($trip['Start_date']) . '"
+                                                data-end="' . htmlspecialchars($trip['End_date']) . '"
+                                                data-desc="' . $desc . '"
+                                                data-email="' . htmlspecialchars($trip['Email']) . '"
+                                                data-transportation="' . htmlspecialchars($trip['transportation_type']) . '"
+                                                data-travelers="' . htmlspecialchars($trip['Number_of_Travelers']) . '"
+                                                data-cost="' . htmlspecialchars($trip['Trip_cost']) . '"
+                                                data-status="' . htmlspecialchars($trip['status']) . '"
+                                                style="border: none; padding: 7px 15px;">View</button>
                                         </div>
                                         <div>
                                             <form method="POST" style="display:inline;">
@@ -222,12 +256,16 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                         }
                         if (!empty($trip_ids)) {
                             foreach ($trip_ids as $trip_id) {
-                                $trip_result = mysqli_query($conn, "SELECT Trip_name, Start_date, End_date FROM trip WHERE Id = $trip_id AND status = 'closed'");
+                                $trip_result = mysqli_query($conn, "SELECT Trip_name, Start_date, End_date, Trip_description, img FROM trip WHERE Id = $trip_id AND status = 'closed'");
                                 if ($trip = mysqli_fetch_assoc($trip_result)) {
+                                    $desc = htmlspecialchars($trip['Trip_description']);
+                                    $img = isset($trip['img']) && $trip['img'] ? htmlspecialchars($trip['img']) : 'images/Image 1.png';
+                                    $title = htmlspecialchars($trip['Trip_name']);
                                     echo "<div class='trip-list-item'>";
-                                    echo "<img src='images/Image 1.png' alt='Profile' class='nav-profile'>";
-                                    echo "<div class='trip-list-info'><div class='trip-list-name'><b>" . htmlspecialchars($trip['Trip_name']) . "</b></div>";
-                                    echo "<div class='trip-list-date'>" . htmlspecialchars($trip['Start_date']) . " to " . htmlspecialchars($trip['End_date']) . "</div></div>";
+                                    echo "<img src='" . $img . "' alt='Profile' class='nav-profile'>";
+                                    echo "<div class='trip-list-info'><div class='trip-list-name'><b>" . $title . "</b></div>";
+                                    echo "<div class='trip-list-date'>" . htmlspecialchars($trip['Start_date']) . " to " . htmlspecialchars($trip['End_date']) . "</div>";
+                                    echo "</div>";
                                     echo "</div>";
                                 }
                             }
@@ -239,6 +277,16 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         </div>
     </div></br></br>
     <script src="js/script.js"></script>
+
+    <!-- the pop up page -->
+    <div id="descModal" style="display:none; position:fixed; z-index:9999; left:0; top:0; width:100vw; height:100vh; background:rgba(0,0,0,0.5); align-items:center; justify-content:center;">
+        <div style="background:#fff; padding:30px; border-radius:10px; max-width:900px; margin:auto; position:relative; top:0vh; box-shadow:0 2px 16px rgba(0,0,0,0.2);">
+            <span id="closeModal" style="position:absolute; top:10px; right:15px; font-size:22px; cursor:pointer;">&times;</span>
+            <h3>Trip Details</h3>
+            <div id="descContent" style="margin-top:15px; white-space:pre-line;"></div>
+        </div>
+    </div>
+    <!-- Modal logic moved to js/script.js -->
     <?php require 'Component/footer.php'; ?>
 </body>
 
