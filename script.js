@@ -15,3 +15,4 @@ document.getElementById("searchInput").addEventListener("input", function () {
     trip.style.display = match ? "flex" : "none";
   });
 });
+
