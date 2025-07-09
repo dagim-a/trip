@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -22,7 +23,7 @@
                 <input type="text" name="Search" placeholder="Search Profile" />
                 <button type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
             </form>
-            <li><img src="images/Image 1.png" alt="Profile" class="nav-profile"></li>
+            <li><a href="edit1.php"><img src="images/Image 1.png" alt="Profile" class="nav-profile"></a></li>
         </ul>
     </nav>
 </header>
