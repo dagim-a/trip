@@ -65,11 +65,11 @@ document.addEventListener('DOMContentLoaded', function() {
                 var travelers = btn.getAttribute('data-travelers') || '';
                 var cost = btn.getAttribute('data-cost') || '';
                 var status = btn.getAttribute('data-status') || '';
-                // Build HTML
-                var html = '<div style="display:flex; gap:30px; align-items:flex-start;">';
-                html += '<img src="' + img + '" alt="Trip Cover" style="width:220px; height:160px; object-fit:cover; border-radius:8px;">';
-                html += '<div>';
-                html += '<h2 style="margin-top:0;">' + title + '</h2>';
+                // Build HTML (use classes, not inline styles)
+                var html = '<div class="trip-detail-modal-flex">';
+                html += '<img src="' + img + '" alt="Trip Cover" class="trip-detail-modal-img">';
+                html += '<div class="trip-detail-modal-info">';
+                html += '<h2>' + title + '</h2>';
                 html += '<p><b>Destination:</b> ' + destination + '</p>';
                 html += '<p><b>Start Date:</b> ' + start + '</p>';
                 html += '<p><b>End Date:</b> ' + end + '</p>';

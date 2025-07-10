@@ -31,18 +31,20 @@ if (!$trip) {
     exit();
 }
 $img = isset($trip['img']) && $trip['img'] ? htmlspecialchars($trip['img']) : 'images/Image 1.png';
-echo '<div style="display:flex; gap:30px; align-items:flex-start;">';
-echo '<img src="' . $img . '" alt="Trip Cover" style="width:220px; height:160px; object-fit:cover; border-radius:8px;">';
-echo '<div>';
-echo '<h2 style="margin-top:0;">' . htmlspecialchars($trip['Trip_name']) . '</h2>';
-echo '<p><b>Destination:</b> ' . htmlspecialchars($trip['Destination']) . '</p>';
-echo '<p><b>Start Date:</b> ' . htmlspecialchars($trip['Start_date']) . '</p>';
-echo '<p><b>End Date:</b> ' . htmlspecialchars($trip['End_date']) . '</p>';
-echo '<p><b>Description:</b><br>' . nl2br(htmlspecialchars($trip['Trip_description'])) . '</p>';
-echo '<p><b>Email:</b> ' . htmlspecialchars($trip['Email']) . '</p>';
-echo '<p><b>Transportation:</b> ' . htmlspecialchars($trip['transportation_type']) . '</p>';
-echo '<p><b>Number of Travelers:</b> ' . htmlspecialchars($trip['Number_of_Travelers']) . '</p>';
-echo '<p><b>Trip Cost:</b> $' . htmlspecialchars($trip['Trip_cost']) . '</p>';
-echo '<p><b>Status:</b> ' . htmlspecialchars($trip['status']) . '</p>';
-echo '</div>';
-echo '</div>';
+echo '
+<div style="display:flex; gap:30px; align-items:flex-start;">
+    <img src="' . $img . '" alt="Trip Cover" style="width:220px; height:160px; object-fit:cover; border-radius:8px;">
+    <div>
+        <h2 style="margin-top:10;">' . htmlspecialchars($trip['Trip_name']) . '</h2>
+        <p><b>Destination1:</b> ' . htmlspecialchars($trip['Destination']) . '</p>
+        <p><b>Start Date:</b> ' . htmlspecialchars($trip['Start_date']) . '</p>
+        <p><b>End Date:</b> ' . htmlspecialchars($trip['End_date']) . '</p>
+        <p><b>Description:</b><br>' . nl2br(htmlspecialchars($trip['Trip_description'])) . '</p>
+        <p><b>Email:</b> ' . htmlspecialchars($trip['Email']) . '</p>
+        <p><b>Transportation:</b> ' . htmlspecialchars($trip['transportation_type']) . '</p>
+        <p><b>Number of Travelers:</b> ' . htmlspecialchars($trip['Number_of_Travelers']) . '</p>
+        <p><b>Trip Cost:</b> $' . htmlspecialchars($trip['Trip_cost']) . '</p>
+        <p><b>Status:</b> ' . htmlspecialchars($trip['status']) . '</p>
+    </div>
+</div>';
+?>
