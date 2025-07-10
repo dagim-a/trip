@@ -215,10 +215,6 @@ body {
         width: 100%;
     }
 
-    /* Hide desktop nav, show mobile nav at bottom */
-    .header-nav {
-        display: none;
-    }
 
     .mobile-bottom-nav {
         display: flex;
