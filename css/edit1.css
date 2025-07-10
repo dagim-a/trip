@@ -242,6 +242,20 @@ body {
     margin-bottom: 6px;
     color: #444;
 }
+.delete-btn {
+    background-color: #e74c3c;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+    margin-top: 20px;
+    align-items: right;
+    border-radius: 5px;
+}
+
+.delete-btn:hover {
+    background-color: #c0392b;
+}
 
 .contact-form input,
 .contact-form textarea {
@@ -303,6 +317,8 @@ body {
 .hamburger {
     display: none;
 }
+
+
 
 
 /* Mobile Styles */

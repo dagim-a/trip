@@ -129,6 +129,9 @@ echo "<p class='stats-value'>$medal</p>";
             <h2 class="section-title">Travel Preferences</h2>
             <p>Interests</p>
             <input type="text" id="interests" name="interests" class="single-input">
+            <form action="delete.php" method="POST" onsubmit="return confirm('Are you sure you want to delete your account? This action cannot be undone.');">
+                <button type="submit" class="delete-btn" >DELETE ACCOUNT</button>
+            </form>
 
        </main>
     </div>

@@ -21,7 +21,7 @@
         <ul class="nav-list">
             <li><a href="Suggestion.php" class="nav-link">Explore</a></li>
             <li><a href="create_trip.php" class="nav-link">Trips</a></li>
-            <li><a href="logout.php" class="nav-link">Log out</a></li>
+            <li><a href="logout.php" class="nav-link" id="log-out">Log out</a></li>
             <li><a href="notification1.php"><i class="fa-solid fa-bell nav-bell"></i></a></li>
             <form method="GET" action="Search.php">
                 <input type="text" name="Search" placeholder="Search Profile" />

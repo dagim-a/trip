@@ -11,7 +11,7 @@
 
     <footer class="footer">
         <p class="tagline">We're not saying we plan the best trips... but even Google Maps gets jealous.</p>
-        <button class="contact-button"><a href="create_trip.php"> Contact Us </a> </button>
+        <<a href="help.php"><button class="contact-button">Contact Us</button></a>
 
         <div class="contact-info">
             <div class="contact-item">
