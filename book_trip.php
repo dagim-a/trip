@@ -41,11 +41,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     // 3. Determine new travel level
     if ($trips_taken < 10) {
-    $medal = "Bronze Explorer";
+    $medal = "Bronze";
     } elseif ($trips_taken < 20) {
-    $medal = "Silver Voyager";
+    $medal = "Silver";
     } else {
-    $medal = "Gold Trailblazer";
+    $medal = "Gold";
     }
 
     // 4. Update travel level

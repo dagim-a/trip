@@ -136,6 +136,55 @@ body {
 .view-btn:hover {
     background: #174ea6;
 }
+.action-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 44px;
+    max-width: 44px;
+    width: 44px;
+    height: 44px;
+    padding: 0;
+    font-size: 1.25rem;
+    border-radius: 50%;
+    border: none;
+    cursor: pointer;
+    text-align: center;
+    transition: background 0.2s, color 0.2s, box-shadow 0.2s;
+    margin: 0 2px;
+    box-sizing: border-box;
+    background: #fff;
+}
+.action-btn i {
+    pointer-events: none;
+}
+.view-btn.action-btn {
+    color: #1a73e8;
+    border: 1.5px solid #1a73e8;
+}
+.view-btn.action-btn:hover {
+    background: #eaf1fb;
+    color: #174ea6;
+}
+.edit-btn.action-btn {
+    background: #1a73e8;
+    color: #fff;
+    text-decoration: none;
+    border: 1.5px solid #1a73e8;
+}
+.edit-btn.action-btn:hover {
+    background: #174ea6;
+    color: #fff;
+}
+.delete-btn.action-btn {
+    background: #e53935;
+    color: #fff;
+    border: 1.5px solid #e53935;
+}
+.delete-btn.action-btn:hover {
+    background: #b71c1c;
+    color: #fff;
+}
 .trip-form-container {
     background: #fff;
     border-radius: 0 0 10px 10px;
