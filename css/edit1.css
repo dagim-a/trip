@@ -159,6 +159,159 @@ body {
     margin-bottom: 15px;
 }
 
+.help-section {
+    background-color: #fdfdfd;
+    border-radius: 10px;
+    padding: 25px;
+    margin-top: 30px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+.help-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.help-list li {
+    padding: 10px 0;
+    border-bottom: 1px solid #eee;
+    font-size: 1.05rem;
+    color: #444;
+}
+
+.help-list li a {
+    color: #0078d7;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.help-list li a:hover {
+    text-decoration: underline;
+}
+
+.section-title i {
+    color: #0078d7;
+    margin-right: 8px;
+}
+
+.intro-text {
+    font-size: 1.1rem;
+    color: #666;
+    margin-bottom: 20px;
+}
+
+.tip-message {
+    margin-top: 20px;
+    background-color: #e9f5ff;
+    padding: 15px;
+    border-left: 4px solid #0078d7;
+    font-style: italic;
+    border-radius: 6px;
+    color: #333;
+}
+
+.contact-form {
+    background-color: #ffffff;
+    border-radius: 12px;
+    padding: 30px 25px;
+    box-shadow: 0 4px 16px rgba(0, 120, 215, 0.08);
+    margin-top: 40px;
+    animation: fadeIn 0.5s ease-in-out;
+}
+
+.contact-form h3 {
+    font-size: 1.4rem;
+    color: #0078d7;
+    margin-bottom: 10px;
+}
+
+.contact-form p {
+    font-size: 1rem;
+    color: #555;
+    margin-bottom: 20px;
+}
+
+.contact-form .form-group {
+    margin-bottom: 20px;
+}
+
+.contact-form label {
+    display: block;
+    font-weight: 500;
+    margin-bottom: 6px;
+    color: #444;
+}
+
+.contact-form input,
+.contact-form textarea {
+    width: 100%;
+    padding: 12px 14px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 1rem;
+    transition: border-color 0.2s ease-in-out;
+}
+
+
+
+    /* Hide desktop nav, show mobile nav at bottom */
+    .header-nav {
+        display: none;
+    }
+
+    .mobile-bottom-nav {
+        display: flex;
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        width: 100vw;
+        height: 60px;
+        background: #fff;
+        border-top: 1px solid #eee;
+        justify-content: space-around;
+        align-items: center;
+        z-index: 2000;
+    }
+    .mobile-bottom-nav .mobile-nav-item {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        color: #777;
+        font-size: 1.1em;
+        text-decoration: none;
+        flex: 1;
+        padding: 5px 0;
+        transition: color 0.2s;
+    }
+    .mobile-bottom-nav .mobile-nav-item.active,
+    .mobile-bottom-nav .mobile-nav-item:active,
+    .mobile-bottom-nav .mobile-nav-item:hover {
+        color: #556b2f;
+    }
+    .mobile-bottom-nav .mobile-nav-label {
+        font-size: 0.75em;
+        margin-top: 2px;
+    }
+
+    /* Hamburger button for side menu (optional) */
+    .hamburger {
+        display: block;
+        background: none;
+        border: none;
+        font-size: 2em;
+        margin-left: 10px;
+        color: #556b2f;
+        cursor: pointer;
+    }
+
+
+/* Hide hamburger by default, show only on mobile */
+.hamburger {
+    display: none;
+}
+
+
 /* Mobile Styles */
 @media (max-width: 600px) {
     .main-container {
@@ -216,55 +369,56 @@ body {
     }
 
 
-    .mobile-bottom-nav {
-        display: flex;
-        position: fixed;
-        bottom: 0;
-        left: 0;
-        width: 100vw;
-        height: 60px;
-        background: #fff;
-        border-top: 1px solid #eee;
-        justify-content: space-around;
-        align-items: center;
-        z-index: 2000;
-    }
-    .mobile-bottom-nav .mobile-nav-item {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        color: #777;
-        font-size: 1.1em;
-        text-decoration: none;
-        flex: 1;
-        padding: 5px 0;
-        transition: color 0.2s;
-    }
-    .mobile-bottom-nav .mobile-nav-item.active,
-    .mobile-bottom-nav .mobile-nav-item:active,
-    .mobile-bottom-nav .mobile-nav-item:hover {
-        color: #556b2f;
-    }
-    .mobile-bottom-nav .mobile-nav-label {
-        font-size: 0.75em;
-        margin-top: 2px;
+    @media screen and (max-width: 768px) {
+
+    .help-section {
+        padding: 15px;
+        font-size: 0.95rem;
     }
 
-    /* Hamburger button for side menu (optional) */
-    .hamburger {
-        display: block;
-        background: none;
-        border: none;
-        font-size: 2em;
-        margin-left: 10px;
-        color: #556b2f;
-        cursor: pointer;
+
+    .help-list li {
+        font-size: 1rem;
+        padding: 8px 0;
+    }
+
+    .contact-form {
+        padding: 20px 15px;
+        margin-top: 30px;
+    }
+
+    .contact-form h3 {
+        font-size: 1.2rem;
+    }
+
+    .contact-form p,
+    .contact-form label {
+        font-size: 1rem;
+    }
+
+    .contact-form input,
+    .contact-form textarea {
+        font-size: 1rem;
+        padding: 10px 12px;
+        border-radius: 6px;
+    }
+
+    .contact-form textarea {
+        height: 120px;
+    }
+
+    .contact-form .update-btn {
+        width: 100%;
+        font-size: 1rem;
+        padding: 12px;
+        border-radius: 6px;
     }
 }
 
-/* Hide hamburger by default, show only on mobile */
-.hamburger {
-    display: none;
+
+   
 }
+
+
 
 
