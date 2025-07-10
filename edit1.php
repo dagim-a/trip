@@ -35,7 +35,7 @@ require 'cmsql.php';
                         <span>Notification</span></a>
                 </li>
                 <li class="sidebar-item">
-                    <a href="#"><i class="fa-solid fa-circle-question"></i>
+                    <a href="help.php"><i class="fa-solid fa-circle-question"></i>
                         <span>Help</span></a>
                 </li>
             </ul>
