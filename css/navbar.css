@@ -38,6 +38,10 @@
 .nav-link:hover {
     color: #556b2f;
 }
+#log-out {
+    text-decoration: none;
+    color: red
+}
 
 .nav-bell {
     color: #777;
