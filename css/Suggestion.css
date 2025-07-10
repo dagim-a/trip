@@ -1,7 +1,7 @@
 body {
   margin: 0;
   font-family:  'Segoe UI', sans-serif;
-  background-color: #ffffff;
+  background-color: #f5f7fa;
   color: #333;
 }
 
@@ -54,7 +54,7 @@ body {
 }
 
 .content {
-  padding: 2rem;
+  padding: 1rem;
   max-width: 800px;
   margin: auto;
 }
@@ -97,7 +97,7 @@ body {
   border-radius: 10px;
 /*  box-shadow: 0 2px 6px rgba(0,0,0,0.05);*/
   transition: transform 0.3s ease;
-  margin-top: 1%;
+  margin: 0;
   align-items: stretch;
 }  
 
@@ -260,3 +260,129 @@ body {
   color: #777;
   margin-top: 0.3rem;
 }
+
+/* Mobile Responsive */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+@media (max-width: 768px) {
+  .topbar {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 1rem;
+  }
+
+  .navbar {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 100%;
+    gap: 1rem;
+  }
+
+  .nav-links {
+    flex-direction: column;
+    width: 100%;
+    gap: 0.8rem;
+  }
+
+  .nav-links a {
+    font-size: 1rem;
+    width: 100%;
+    display: block;
+  }
+
+  .navbar input {
+    width: 81%;
+    max-width: 100%;
+    padding: 0.5rem;
+    box-sizing: border-box;
+  }
+
+  .section-header {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+  }
+
+ 
+  .trip-item {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 1rem;
+  }
+
+  .trip-info {
+    padding: 1rem;
+    width: 100%;
+    align-items: center;
+  }
+
+  .book-btn {
+    width: 100%;
+    align-self: center;
+    margin-top: 1rem;
+  }
+
+  .trip-item img {
+    width: 100%;
+    height: auto;
+    margin-top: 1rem;
+  }
+
+  .family-card {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 1rem;
+  }
+
+  .family-card img {
+    width: 80px;
+    height: 80px;
+    margin-bottom: 0.5rem;
+  }
+
+  .search-bar input {
+    width: 100%;
+    padding: 0.5rem;
+    margin-bottom: 1rem;
+  }
+}
+.search-container {
+  position: relative;
+  width: 100%;
+  max-width: 300px;
+  box-sizing: border-box;
+}
+
+.search-container input {
+  width: 100%;
+  max-width: 100%;
+  padding: 0.5rem 2.5rem 0.5rem 0.8rem;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  background-color: #f0f0f0;
+  color: #333;
+  box-sizing: border-box;
+  display: block;
+}
+
+
+
+
+

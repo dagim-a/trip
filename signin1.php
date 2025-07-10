@@ -2,10 +2,6 @@
 session_start();
 require 'cmsql.php';
 
-if (isset($_SESSION['user_id'])) {
-  header("Location: edit1.php");
-  exit();
-}
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
   $email = $_POST['email'] ?? '';
   $password = $_POST['password'] ?? '';

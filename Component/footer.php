@@ -1,40 +1,35 @@
-    <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-<link rel="stylesheet" href="css/footer.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>footer</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" />
+    <link rel="stylesheet" href="css/footer.css">
 </head>
-    <footer>
-        <div class="footer-content">
-            <div>
-                <img src="images/Logo(Footer).png" alt="Trip Plan Logo">
-                <p>© 2025 TripPlan, Inc.<br>All rights reserved.</p>
+<body>
+
+    <footer class="footer">
+        <p class="tagline">We're not saying we plan the best trips... but even Google Maps gets jealous.</p>
+        <button class="contact-button"><a href="create_trip.php"> Contact Us </a> </button>
+
+        <div class="contact-info">
+            <div class="contact-item">
+                <i class="fas fa-phone"></i>
+                <span class="contact-text">+251 91 333 6375</span>
             </div>
-            <div>
-                <h4>Explore</h4>
-                <ul>
-                    <li><a href="#">Destinations</a></li>
-                    <li><a href="#">Activities</a></li>
-                    <li><a href="#">Itineraries</a></li>
-                    <li><a href="#">Planner</a></li>
-                </ul>
+            <div class="contact-item">
+                <i class="fas fa-envelope"></i>
+                <span class="contact-text">Tripplaner@gmail.com</span>
             </div>
-            <div>
-                <h4>Connect</h4>
-                <ul>
-                    <li><a href="#">Blog</a></li>
-                    <li><a href="#">Support</a></li>
-                    <li><a href="#">Community</a></li>
-                    <li><a href="#">Partners</a></li>
-                </ul>
-            </div>
-            <div>
-                <h4>Company</h4>
-                <ul>
-                    <li><a href="#">About Us</a></li>
-                    <li><a href="#">Careers</a></li>
-                    <li><a href="#">Press</a></li>
-                    <li><a href="#">Contact</a></li>
-                </ul>
+            <div class="contact-item">
+                <i class="fas fa-map-marker-alt"></i>
+                <span class="contact-text">Bole, Addis Ababa</span>
             </div>
         </div>
+
+        <p class="copyright">&copy; 2025 TripPlan, Inc. All rights reserved.</p>
     </footer>
+
+</body>
+</html>
