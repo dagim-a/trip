@@ -70,7 +70,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Create Trip</title>
     <link rel="stylesheet" href="css/create_trip.css">
-    <!-- <link rel="stylesheet" href="css/notification1.css"> -->
+    <link rel="stylesheet" href="css/trip_detail_modal.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" />
 </head>
 
@@ -278,7 +278,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     </div></br></br>
     <script src="js/script.js"></script>
 
-    <!-- the pop up page -->
     <div id="descModal" style="display:none; position:fixed; z-index:9999; left:0; top:0; width:100vw; height:100vh; background:rgba(0,0,0,0.5); align-items:center; justify-content:center;">
         <div style="background:#fff; padding:30px; border-radius:10px; max-width:900px; margin:auto; position:relative; top:0vh; box-shadow:0 2px 16px rgba(0,0,0,0.2);">
             <span id="closeModal" style="position:absolute; top:10px; right:15px; font-size:22px; cursor:pointer;">&times;</span>
