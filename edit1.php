@@ -75,8 +75,21 @@ require 'cmsql.php';
                     <h3>Traveler Level</h3>
                     <p class="stats-value">
                         <?php
-                        echo $user_info['Travel_level'];
-                        ?>
+$trips_taken = $user_info['Trip_taken'];
+
+if ($trips_taken < 10) {
+    $medal = "🥉 Bronze Explorer";
+} elseif ($trips_taken < 20) {
+    $medal = "🥈 Silver Voyager";
+} elseif ($trips_taken >= 20) {
+    $medal = "🥇 Gold Trailblazer";
+} else {
+    $medal = "Unknown";
+}
+
+echo "<p class='stats-value'>$medal</p>";
+?>
+
                     </p>
                 </div>
             </div>
@@ -116,7 +129,8 @@ require 'cmsql.php';
             <h2 class="section-title">Travel Preferences</h2>
             <p>Interests</p>
             <input type="text" id="interests" name="interests" class="single-input">
-        </main>
+
+       </main>
     </div>
 </body>
 
