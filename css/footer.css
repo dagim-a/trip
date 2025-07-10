@@ -1,43 +1,80 @@
-footer {
-    background-color: #FEFAF4;
+/* style.css */
+/* General Styling */
+body {
+    font-family: sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f8f5ec; /* Light background */
+    color: #333; /* Dark text */
+}
+
+.footer {
+    text-align: center;
     padding: 40px 20px;
-    text-align: left;
-    color: #777;
-    font-size: 0.9em;
-    border-top: 1px solid #eee;
 }
-.footer-content {
-    max-width: 900px;
-    margin: 0 auto;
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
-    flex-wrap: wrap;
-}
-.footer-content > div {
-    flex: 1;
-    text-align: left;
-    min-width: 150px;
+
+/* Tagline */
+.tagline {
+    font-size: 1.2em;
     margin-bottom: 20px;
 }
-.footer-content img {
-    width: 40px;
-    height: 40px;
-    margin-bottom: 10px;
+
+/* Contact Button */
+.contact-button {
+    background-color: #3b82f6; /* Blue */
+    color: white;
+    border: none;
+    border-radius: 20px;
+    padding: 12px 25px;
+    cursor: pointer;
+    font-size: 1em;
+    margin-bottom: 30px;
 }
-.footer-content h4 {
-    margin-bottom: 5px;
-    color: #556b2f;
+
+/* Contact Info */
+.contact-info {
+    display: flex;
+    justify-content: center; /* Center items horizontally */
+    margin-bottom: 20px;
+    flex-wrap: wrap; /* Allows items to wrap on smaller screens */
 }
-.footer-content ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
+
+.contact-item {
+    display: flex;
+    align-items: center;
+    margin: 0 15px; /* Spacing between items */
+    font-size: 0.9em;
 }
-.footer-content li {
-    margin-bottom: 5px;
+
+.icon {
+    width: 20px;
+    height: 20px;
+    margin-right: 5px;
+    filter: brightness(0) saturate(100%) invert(54%) sepia(10%) saturate(5575%) hue-rotate(190deg) brightness(102%) contrast(101%); /* Blue icon color */
 }
-.footer-content a {
-    text-decoration: none;
+
+.contact-text {
+    color: #777; /* Grayish text */
+}
+
+/* Copyright */
+.copyright {
+    font-size: 0.8em;
     color: #777;
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 600px) {
+    .footer {
+        padding: 20px 10px; /* Reduced padding for smaller screens */
+    }
+
+    .contact-info {
+        flex-direction: column; /* Stack items vertically on smaller screens */
+        align-items: center; /* Center items horizontally when stacked */
+    }
+
+    .contact-item {
+        margin: 10px 0; /* Stack items vertically on smaller screens and add vertical spacing */
+    }
 }
