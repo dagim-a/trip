@@ -165,3 +165,111 @@ body {
     font-size: 0.98rem;
 }
 
+@media (max-width: 767px) {
+  /* Container */
+  /* .main-container {
+    margin: 20px 12px;
+    padding: 24px;
+    border-radius: 8px;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.05);
+  } */
+  .main-container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 40px auto 0;
+  padding: 0 16px; /* ensures breathing room on small screens */
+  }
+  *, *::before, *::after {
+  box-sizing: border-box;
+}
+
+
+
+  /* Background */
+  body {
+    background-position: top center;
+    background-size: cover;
+    overflow-x: hidden;
+  }
+
+  /* Tabs: stack vertically */
+  .trip-tabs {
+    flex-direction: column;
+    gap: 8px;
+    margin-bottom: 24px;
+  }
+  .tab-btn {
+    width: 100%;
+    padding: 12px 0;
+    font-size: 1rem;
+    border-radius: 8px;
+  }
+
+  /* Trip list items */
+  .trip-list-item {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+    padding: 12px 0;
+  }
+
+  /* Form container */
+  .trip-form-container {
+    padding: 24px 16px;
+    border-radius: 0 0 8px 8px;
+    box-shadow: 0 1px 6px rgba(0, 0, 0, 0.02);
+  }
+
+  /* Form rows collapse to single column */
+  .trip-form .form-row {
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  /* Inputs & selects: full width */
+  .trip-form .form-control,
+  .trip-form input[type="text"],
+  .trip-form input[type="email"],
+  .trip-form input[type="date"],
+  .trip-form input[type="number"],
+  .trip-form select,
+  .trip-form textarea {
+    width: 100%;
+    padding: 8px 10px;
+    font-size: 0.95rem;
+  }
+
+  /* Buttons: full-width blocks */
+  .form-actions {
+    flex-direction: column;
+    gap: 12px;
+    margin-top: 16px;
+  }
+
+  .travler_cost .main-container {
+  padding: 0 16px;
+  /* other adjustments as needed */
+  }
+
+
+
+  .save-btn,
+  .cancel-btn {
+    width: 100%;
+    padding: 12px;
+    font-size: 1rem;
+  }
+
+  /* Notice message */
+  .notice-message {
+    font-size: 1rem;
+    margin-bottom: 16px;
+  }
+
+  /* Footer: stack sections vertically */
+  .footer-content {
+    flex-direction: column;
+    gap: 24px;
+    padding: 0 16px 24px;
+  }
+}
