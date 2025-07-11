@@ -3,21 +3,25 @@ require 'cmsql.php';
 ?>
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>HOME Page</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" />
-    <link rel="stylesheet" href="home1.css">
+    <link rel="stylesheet" href="css/home1.css">
 </head>
+
 <body>
     <nav class="main-nav">
-        <div class="brand">
-            <i class="fa-solid fa-tree"></i>
-            <h1>Trip Planner</h1>
-        </div>
+        <a href="home1.php">
+            <div class="brand">
+                <i class="fa-solid fa-tree"></i>
+                <h1>Trip Planner</h1>
+            </div>
+        </a>
         <ul>
-            <li><a href="#">Home</a></li>
+            <li><a href="home1.php">Home</a></li>
             <li><a href="signup1.php">Sign Up</a></li>
             <li><a href="signin1.php">Login</a></li>
         </ul>
@@ -73,49 +77,16 @@ require 'cmsql.php';
             <i class="fa-solid fa-house"></i>
             <span class="mobile-nav-label">Home</span>
         </a>
-        <a href="#" class="mobile-nav-item">
+        <a href="signup1.php" class="mobile-nav-item">
             <i class="fa-solid fa-user"></i>
             <span class="mobile-nav-label">Sign up</span>
         </a>
-        <a href="#" class="mobile-nav-item">
+        <a href="signin1.php" class="mobile-nav-item">
             <i class="fa-solid fa-user-plus"></i>
             <span class="mobile-nav-label">Login</span>
         </a>
     </nav>
-    <footer>
-        <div class="footer-content">
-            <div>
-                <img src="images/Logo(Footer).png" alt="Trip Plan Logo">
-                <p>© 2025 TripPlan, Inc.<br>All rights reserved.</p>
-            </div>
-            <div>
-                <h4>Explore</h4>
-                <ul>
-                    <li><a href="#">Destinations</a></li>
-                    <li><a href="#">Activities</a></li>
-                    <li><a href="#">Itineraries</a></li>
-                    <li><a href="#">Planner</a></li>
-                </ul>
-            </div>
-            <div>
-                <h4>Connect</h4>
-                <ul>
-                    <li><a href="#">Blog</a></li>
-                    <li><a href="#">Support</a></li>
-                    <li><a href="#">Community</a></li>
-                    <li><a href="#">Partners</a></li>
-                </ul>
-            </div>
-            <div>
-                <h4>Company</h4>
-                <ul>
-                    <li><a href="#">About Us</a></li>
-                    <li><a href="#">Careers</a></li>
-                    <li><a href="#">Press</a></li>
-                    <li><a href="#">Contact</a></li>
-                </ul>
-            </div>
-        </div>
-    </footer>
+    <?php require 'Component/footer.php'; ?>
 </body>
+
 </html>

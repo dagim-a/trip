@@ -42,7 +42,7 @@ body {
     border-radius: 15px;
 }
 .hero {
-    background-image: url('images/Section 1.png');
+    background-image: url('../images/Section 1.png');
     height: 100vh;
     background-size: cover;
     background-position: center;
@@ -137,7 +137,7 @@ body {
     font-size: 0.9em;
 }
 .confidence {
-    background-image: url('images/Section 4.png');
+    background-image: url('../images/Section 4.png');
     background-size: cover;
     background-position: center;
     color: white;
@@ -164,49 +164,8 @@ body {
     cursor: pointer;
     font-size: 1em;
 }
-
-footer {
-    background-color: #FEFAF4;
-    padding: 40px 20px;
-    text-align: left;
-    color: #777;
-    font-size: 0.9em;
-    border-top: 1px solid #eee;
-}
-.footer-content {
-    max-width: 900px;
-    margin: 0 auto;
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
-    flex-wrap: wrap;
-}
-.footer-content > div {
-    flex: 1;
-    text-align: left;
-    min-width: 150px;
-    margin-bottom: 20px;
-}
-.footer-content img {
-    width: 40px;
-    height: 40px;
-    margin-bottom: 10px;
-}
-.footer-content h4 {
-    margin-bottom: 5px;
-    color: #556b2f;
-}
-.footer-content ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-}
-.footer-content li {
-    margin-bottom: 5px;
-}
-.footer-content a {
-    text-decoration: none;
-    color: #777;
+.mobile-bottom-nav {
+    display: none;
 }
 
 /* Mobile Styles */
@@ -348,14 +307,4 @@ footer {
 /* Hide hamburger by default, show only on mobile */
 .hamburger {
     display: none;
-}
-
-/* Hide mobile nav on desktop */
-@media (min-width: 601px) {
-    .mobile-bottom-nav {
-        display: none !important;
-    }
-    .hamburger {
-        display: none !important;
-    }
 }

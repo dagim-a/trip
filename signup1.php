@@ -7,20 +7,29 @@ if (!empty($_GET['name']) && !empty($_GET['email']) && !empty($_GET['password'])
   $name = htmlspecialchars($_GET['name']);
   $email = htmlspecialchars($_GET['email']);
   $password = htmlspecialchars($_GET['password']);
-  $sql = "INSERT INTO user (Email, Password_hash) VALUES ('$email', '$password')";
-  $qur = mysqli_query($conn, $sql);
-  if (!$qur){
-    echo "Error: " . mysqli_error($conn);
+
+
+  // Check if email already exists
+  $check = mysqli_query($conn, "SELECT Id FROM user WHERE Email = '$email'");
+  if (mysqli_num_rows($check) > 0) {
+    echo "<p style='color:red;'>This email is already registered. Please use another email.</p>";
   } else {
-    $userId = mysqli_insert_id($conn);
-    $sql = "INSERT INTO user_info (userId, Name) VALUES ('$userId', '$name')";
+    $password = password_hash($password, PASSWORD_DEFAULT);
+    $sql = "INSERT INTO user (Email, Password_hash) VALUES ('$email', '$password')";
     $qur = mysqli_query($conn, $sql);
     if (!$qur) {
       echo "Error: " . mysqli_error($conn);
     } else {
-      $_SESSION['user_id'] = $userId;
-      header("Location: edit1.php");
-      exit();
+      $userId = mysqli_insert_id($conn);
+      $sql = "INSERT INTO user_info (userId, Name) VALUES ('$userId', '$name')";
+      $qur = mysqli_query($conn, $sql);
+      if (!$qur) {
+        echo "Error: " . mysqli_error($conn);
+      } else {
+        $_SESSION['user_id'] = $userId;
+        header("Location: edit1.php");
+        exit();
+      }
     }
   }
 }
@@ -33,17 +42,19 @@ if (!empty($_GET['name']) && !empty($_GET['email']) && !empty($_GET['password'])
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Sign Up</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" />
-  <link rel="stylesheet" href="signup1.css">
+  <link rel="stylesheet" href="css/signup1.css">
 </head>
 
 <body>
   <div class="signup-container">
     <div class="signup-card">
       <div class="signup-form-section">
-        <div class="signup-header">
-          <i class="fa-solid fa-tree"></i>
-          <h1>Trip Planner</h1>
-        </div>
+        <a href="home1.php">
+          <div class="signup-header">
+            <i class="fa-solid fa-tree"></i>
+            <h1>Trip Planner</h1>
+          </div>
+        </a>
         <h2>Sign up</h2>
         <p class="signup-subtext">Sign up to enjoy the feature of Revolutie</p>
         <form>

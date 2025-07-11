@@ -1,0 +1,199 @@
+body {
+    font-family: 'Segoe UI', Arial, sans-serif;
+    background: linear-gradient(135deg, #eaf1fb 0%, #f7fafd 100%);
+    margin: 0;
+    padding: 0;
+}
+
+.main-container {
+    display: flex;
+    max-width: 1100px;
+    margin: 40px auto;
+    background: #fff;
+    border-radius: 18px;
+    box-shadow: 0 4px 24px rgba(26,115,232,0.10);
+    overflow: hidden;
+    min-height: 85vh;
+}
+
+.sidebar {
+    background: #f7fafd;
+    padding: 32px 18px 32px 18px;
+    min-width: 210px;
+    border-right: 1px solid #e3eaf5;
+}
+
+.sidebar-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+}
+
+.sidebar-item a {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    text-decoration: none;
+    color: #1a73e8;
+    font-size: 1.08rem;
+    font-weight: 500;
+    padding: 10px 14px;
+    border-radius: 8px;
+    transition: background 0.2s, color 0.2s;
+}
+
+.sidebar-item a:hover, .sidebar-item a:focus {
+    background: #eaf1fb;
+    color: #174ea6;
+}
+
+.notification-content {
+    flex: 1;
+    padding: 38px 44px 38px 44px;
+    background: #fff;
+}
+
+.notification-title {
+    font-size: 2rem;
+    font-weight: 700;
+    color: #1a73e8;
+    margin-bottom: 18px;
+}
+
+.notification-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+}
+
+.notification-item {
+    background: #f7fafd;
+    border-radius: 14px;
+    box-shadow: 0 2px 12px rgba(26,115,232,0.06);
+    padding: 18px 24px;
+    display: flex;
+    align-items: flex-start;
+    gap: 18px;
+    position: relative;
+}
+
+.notification-icon {
+    font-size: 1.5rem;
+    color: #1a73e8;
+    margin-right: 12px;
+}
+
+.notification-info {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.notification-info h4 {
+    margin: 0 0 6px 0;
+    font-size: 1.1rem;
+    color: #174ea6;
+    font-weight: 600;
+}
+
+.notification-info p {
+    margin: 0;
+    color: #555;
+    font-size: 1rem;
+}
+
+.notification-time {
+    font-size: 0.95rem;
+    color: #888;
+    position: absolute;
+    top: 18px;
+    right: 24px;
+}
+
+/* Mobile Styles for sidebar and bottom nav */
+@media (max-width: 900px) {
+    .main-container {
+        flex-direction: column;
+        max-width: 98vw;
+        margin-left: 0;
+        padding-bottom: 60px; /* for bottom nav */
+        min-height: 100vh;
+    }
+    .sidebar {
+        min-width: 0;
+        width: 100%;
+        border-right: none;
+        border-bottom: 1px solid #e3eaf5;
+        padding: 18px 8px;
+        display: none !important;
+    }
+    .mobile-bottom-nav {
+        display: flex !important;
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        width: 100vw;
+        height: 60px;
+        background: #fff;
+        border-top: 1px solid #eee;
+        justify-content: space-around;
+        align-items: center;
+        z-index: 2000;
+    }
+    .notification-content {
+        margin-left: 0;
+        padding: 24px 8px 24px 8px;
+        width: 100%;
+    }
+    .notification-item {
+        flex-direction: column;
+        gap: 10px;
+        padding: 14px 8px;
+    }
+    .notification-time {
+        position: static;
+        margin-top: 8px;
+        right: auto;
+        top: auto;
+    }
+}
+/* Hide bottom nav by default */
+.mobile-bottom-nav {
+    display: none;
+}
+.mobile-bottom-nav .mobile-nav-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: #777;
+    font-size: 1.1em;
+    text-decoration: none;
+    flex: 1;
+    padding: 5px 0;
+    transition: color 0.2s;
+    font-family: 'Segoe UI', Arial, sans-serif;
+    font-weight: 500;
+}
+.mobile-bottom-nav .mobile-nav-item.active,
+.mobile-bottom-nav .mobile-nav-item:active,
+.mobile-bottom-nav .mobile-nav-item:hover {
+    color: #556b2f;
+}
+.mobile-bottom-nav .mobile-nav-label {
+    font-size: 0.75em;
+    margin-top: 2px;
+}
+
+/* Hide hamburger by default, show only on mobile */
+.hamburger {
+    display: none;
+}
+
+

@@ -2,7 +2,7 @@ body {
     font-family: sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #f0f2f5;
+    background-color: #ffffff;
 }
 
 .signin-container {
@@ -129,7 +129,7 @@ body {
 
 .signin-image-section {
     flex: 1;
-    background-image: url('images/signin.jpg');
+    background-image: url('../images/signin.jpg');
     background-size: cover;
     background-position: center;
     border-radius: 0 10px 10px 0;

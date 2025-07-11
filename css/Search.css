@@ -1,0 +1,132 @@
+/* Enhanced family search card styles */
+.family-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 32px;
+  justify-content: center;
+  margin-top: 40px;
+  padding-bottom: 40px;
+}
+.family-card {
+  background: #fff;
+  border-radius: 20px;
+  box-shadow: 0 6px 24px rgba(0,0,0,0.10);
+  padding: 32px 28px 24px 28px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 480px;
+  min-height: 220px;
+  transition: box-shadow 0.2s;
+  position: relative;
+  margin-bottom: 0;
+}
+.family-card:hover {
+  box-shadow: 0 8px 24px rgba(0,0,0,0.16);
+}
+.family-card img {
+  border-radius: 50%;
+  width: 80px;
+  height: 80px;
+  margin-bottom: 16px;
+  border: 2px solid #eee;
+}
+.family-card .info {
+  text-align: center;
+  margin-bottom: 16px;
+}
+.family-card .name {
+  font-size: 1.4rem;
+  font-weight: 700;
+  margin-bottom: 6px;
+}
+.family-card .members {
+  font-size: 1.1rem;
+  color: #888;
+}
+.action-btns {
+  display: flex;
+  gap: 18px;
+  justify-content: center;
+  margin-top: 10px;
+}
+.action-btns button, .action-btns a {
+  background: #f5f5f5;
+  border: none;
+  border-radius: 50%;
+  width: 48px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.4rem;
+  color: #333;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+  position: relative;
+}
+.action-btns button:hover, .action-btns a:hover {
+  background: #007bff;
+  color: #fff;
+}
+.action-btns button:focus, .action-btns a:focus {
+  outline: 2px solid #007bff;
+}
+.action-btns [title]::after {
+  content: attr(title);
+  position: absolute;
+  left: 50%;
+  top: 110%;
+  transform: translateX(-50%);
+  background: #222;
+  color: #fff;
+  padding: 2px 8px;
+  border-radius: 4px;
+  font-size: 0.95rem;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.2s;
+  z-index: 2;
+}
+.action-btns button:hover[title]::after, .action-btns a:hover[title]::after {
+  opacity: 1;
+}
+.main-container {
+  max-width: 1200px;
+  margin: 40px auto auto auto;
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: 0 4px 24px rgba(0,0,0,0.07);
+  padding: 36px 32px 32px 32px;
+}
+@media (max-width: 600px) {
+  .main-container {
+    width: 98vw;
+    min-width: 0;
+    padding: 12px 4px;
+    margin: 8px auto;
+    border-radius: 10px;
+  }
+  .family-list {
+    flex-direction: column;
+    gap: 20px;
+    align-items: center;
+    width: 100vw;
+    padding: 0 2vw;
+  }
+  .family-card {
+    width: 98vw;
+    min-width: 0;
+    padding: 20px 8px;
+    margin: 0 auto;
+  }
+  .action-btns {
+    gap: 12px;
+  }
+  .action-btns button, .action-btns a {
+    width: 40px;
+    height: 40px;
+    font-size: 1.1rem;
+  }
+}
