@@ -67,6 +67,21 @@ if (!isset($_SESSION['user_id'])) {
             }
             ?>
         </main>
+        <!-- Mobile Bottom Navigation Bar -->
+        <nav class="mobile-bottom-nav" id="mobileBottomNav">
+            <a href="edit1.php" class="mobile-nav-item">
+                <i class="fa-solid fa-pencil"></i>
+                <span class="mobile-nav-label">Edit</span>
+            </a>
+            <a href="notification1.php" class="mobile-nav-item">
+                <i class="fa-solid fa-bell"></i>
+                <span class="mobile-nav-label">Notify</span>
+            </a>
+            <a href="help.php" class="mobile-nav-item">
+                <i class="fa-solid fa-circle-question"></i>
+                <span class="mobile-nav-label">Help</span>
+            </a>
+        </nav>
     </div>
 
 </body>

@@ -22,9 +22,18 @@ require 'cmsql.php';
     <div class="main-container">
         <aside class="sidebar">
             <ul class="sidebar-list">
-                <li class="sidebar-item"><a href="edit1.php"><i class="fa-solid fa-pencil"></i><span>Edit profile</span></a></li>
-                <li class="sidebar-item"><a href="notification1.php"><i class="fa-solid fa-bell"></i><span>Notification</span></a></li>
-                <li class="sidebar-item"><a href="help.php" class="active"><i class="fa-solid fa-circle-question"></i><span>Help</span></a></li>
+                <li class="sidebar-item">
+                    <a href="edit1.php"><i class="fa-solid fa-pencil"></i>
+                        <span>Edit profile</span></a>
+                </li>
+                <li class="sidebar-item">
+                    <a href="notification1.php"><i class="fa-solid fa-bell"></i>
+                        <span>Notification</span></a>
+                </li>
+                <li class="sidebar-item">
+                    <a href="help.php" class="active"><i class="fa-solid fa-circle-question"></i>
+                        <span>Help</span></a>
+                </li>
             </ul>
         </aside>
 
@@ -44,22 +53,37 @@ require 'cmsql.php';
             </div>
 
             <div class="contact-form">
-    <h3>Contact Support Directly</h3>
-    <p>If you'd prefer to message us right here, fill out the form below:</p>
-    <form action="send_support_message.php" method="POST">
-        <div class="form-group">
-            <label for="userEmail">Your Email</label>
-            <input type="email" id="userEmail" name="userEmail" required>
-        </div>
-        <div class="form-group">
-            <label for="message">Message</label>
-            <textarea id="message" name="message" rows="5" required></textarea>
-        </div>
-        <button type="submit" class="update-btn">Send Message</button>
-    </form>
-</div>
+                <h3>Contact Support Directly</h3>
+                <p>If you'd prefer to message us right here, fill out the form below:</p>
+                <form action="send_support_message.php" method="POST">
+                    <div class="form-group">
+                        <label for="userEmail">Your Email</label>
+                        <input type="email" id="userEmail" name="userEmail" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Message</label>
+                        <textarea id="message" name="message" rows="5" required></textarea>
+                    </div>
+                    <button type="submit" class="update-btn">Send Message</button>
+                </form>
+            </div>
 
         </main>
+        <!-- Mobile Bottom Navigation Bar -->
+        <nav class="mobile-bottom-nav" id="mobileBottomNav">
+            <a href="edit1.php" class="mobile-nav-item">
+                <i class="fa-solid fa-pencil"></i>
+                <span>Edit</span>
+            </a>
+            <a href="notification1.php" class="mobile-nav-item">
+                <i class="fa-solid fa-bell"></i>
+                <span>Notify</span>
+            </a>
+            <a href="help.php" class="mobile-nav-item">
+                <i class="fa-solid fa-circle-question"></i>
+                <span>Help</span>
+            </a>
+        </nav>
     </div>
 </body>
 
