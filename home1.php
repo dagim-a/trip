@@ -68,20 +68,19 @@ require 'cmsql.php';
         <p>With our powerful travel planner, you can create custom <br> itineraries, track your budget, and manage every detail of...</p>
         <button>Get Started</button>
     </div>
-    <!-- Hamburger button for mobile (optional, for side menu/modal) -->
+
     <button class="hamburger" aria-label="Open menu">&#9776;</button>
 
-    <!-- Mobile Bottom Navigation -->
     <nav class="mobile-bottom-nav">
         <a href="#" class="mobile-nav-item">
             <i class="fa-solid fa-house"></i>
             <span class="mobile-nav-label">Home</span>
         </a>
-        <a href="#" class="mobile-nav-item">
+        <a href="signup1.php" class="mobile-nav-item">
             <i class="fa-solid fa-user"></i>
             <span class="mobile-nav-label">Sign up</span>
         </a>
-        <a href="#" class="mobile-nav-item">
+        <a href="signin1.php" class="mobile-nav-item">
             <i class="fa-solid fa-user-plus"></i>
             <span class="mobile-nav-label">Login</span>
         </a>
