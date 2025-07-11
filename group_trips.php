@@ -9,6 +9,10 @@ if ($groupId) {
     $result = $stmt->get_result();
     $group = $result->fetch_assoc();
 }
+if (!isset($_SESSION['user_id'])) {
+    header("Location: signin1.php");
+    exit();
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">

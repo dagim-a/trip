@@ -1,3 +1,10 @@
+<?php
+session_start();
+if (!isset($_SESSION['user_id'])) {
+    header("Location: signin1.php");
+    exit();
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -12,11 +19,7 @@
 
 <body>
   <?php
-  session_start();
-  if (!isset($_SESSION['user_id'])) {
-    header("Location: signin1.php");
-    exit();
-  }
+  
   require 'Component/navbar.php';
   ?>
   <main>

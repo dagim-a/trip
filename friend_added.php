@@ -9,7 +9,12 @@ if ($userId) {
     $result = $stmt->get_result();
     $user = $result->fetch_assoc();
 }
+if (!isset($_SESSION['user_id'])) {
+    header("Location: signin1.php");
+    exit();
+}
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
