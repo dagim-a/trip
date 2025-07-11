@@ -41,6 +41,7 @@ if (!isset($_SESSION['user_id'])) {
             require 'cmsql.php';
             $user_id = $_SESSION['user_id'];
             $hasNotification = false;
+
             // Get all trips created by this user
             $trip_result = mysqli_query($conn, "SELECT * FROM trip WHERE userId = $user_id");
             while ($trip = mysqli_fetch_assoc($trip_result)) {
@@ -62,6 +63,23 @@ if (!isset($_SESSION['user_id'])) {
                     }
                 }
             }
+
+            // Fetch notifications from notification table for this user
+            $notif_result = mysqli_query($conn, "SELECT * FROM notifications WHERE user_Id = $user_id ORDER BY created_at DESC");
+            while ($notif = mysqli_fetch_assoc($notif_result)) {
+                $hasNotification = true;
+                $message = htmlspecialchars($notif['message']);
+                $created_at = htmlspecialchars($notif['created_at']);
+                echo '<div class="notification-card">';
+                echo '<div class="notification-info">';
+                echo '<div class="notification-icon"><i class="fa-solid fa-bell"></i></div>';
+                echo '<div class="notification-text">';
+                echo '<p class="notification-title">' . $message . '</p>';
+                echo '<span class="notification-date">' . $created_at . '</span>';
+                echo '</div></div>';
+                echo '</div>';
+            }
+
             if (!$hasNotification) {
                 echo '<h2 style="text-align:center; color:rgb(59, 55, 59); margin-top:40px;">No Notification</h2>';
             }
