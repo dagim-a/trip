@@ -75,20 +75,20 @@ require 'cmsql.php';
                     <h3>Traveler Level</h3>
                     <p class="stats-value">
                         <?php
-$trips_taken = $user_info['Trip_taken'];
+                        $trips_taken = $user_info['Trip_taken'];
 
-if ($trips_taken < 10) {
-    $medal = "🥉 Bronze Explorer";
-} elseif ($trips_taken < 20) {
-    $medal = "🥈 Silver Voyager";
-} elseif ($trips_taken >= 20) {
-    $medal = "🥇 Gold Trailblazer";
-} else {
-    $medal = "Unknown";
-}
+                        if ($trips_taken < 10) {
+                            $medal = "🥉 Bronze Explorer";
+                        } elseif ($trips_taken < 20) {
+                            $medal = "🥈 Silver Voyager";
+                        } elseif ($trips_taken >= 20) {
+                            $medal = "🥇 Gold Trailblazer";
+                        } else {
+                            $medal = "Unknown";
+                        }
 
-echo "<p class='stats-value'>$medal</p>";
-?>
+                        echo "<p class='stats-value'>$medal</p>";
+                        ?>
 
                     </p>
                 </div>
@@ -130,10 +130,25 @@ echo "<p class='stats-value'>$medal</p>";
             <p>Interests</p>
             <input type="text" id="interests" name="interests" class="single-input">
             <form action="delete.php" method="POST" onsubmit="return confirm('Are you sure you want to delete your account? This action cannot be undone.');">
-                <button type="submit" class="delete-btn" >DELETE ACCOUNT</button>
+                <button type="submit" class="delete-btn">DELETE ACCOUNT</button>
             </form>
 
-       </main>
+        </main>
+        <!-- Mobile Bottom Navigation Bar -->
+        <nav class="mobile-bottom-nav" id="mobileBottomNav">
+            <a href="edit1.php" class="mobile-nav-item">
+                <i class="fa-solid fa-pencil"></i>
+                <span>Edit</span>
+            </a>
+            <a href="notification1.php" class="mobile-nav-item">
+                <i class="fa-solid fa-bell"></i>
+                <span>Notify</span>
+            </a>
+            <a href="help.php" class="mobile-nav-item">
+                <i class="fa-solid fa-circle-question"></i>
+                <span>Help</span>
+            </a>
+        </nav>
     </div>
 </body>
 

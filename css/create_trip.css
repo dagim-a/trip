@@ -318,17 +318,12 @@ body {
 }
 @media (max-width: 767px) {
   /* Container */
-  /* .main-container {
-    margin: 20px 12px;
-    padding: 24px;
-    border-radius: 8px;
-    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.05);
-  } */
+
   .main-container {
   width: 100%;
   max-width: 1200px;
   margin: 40px auto 0;
-  padding: 0 16px; /* ensures breathing room on small screens */
+  padding: 10px 16px 15px 33px;
   }
   *, *::before, *::after {
   box-sizing: border-box;
