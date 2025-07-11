@@ -1,3 +1,10 @@
+<?php
+session_start();
+if (!isset($_SESSION['user_id'])) {
+  header("Location: signin1.php");
+  exit();
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -11,36 +18,40 @@
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
   <script>
-    $(document).ready(function () {
+    $(document).ready(function() {
       // Add Friend button click
-      $('.add-friend-btn').click(function () {
+      $('.add-friend-btn').click(function() {
         const userId = $(this).data('user-id');
 
         $.ajax({
           url: 'add_friend.php',
           method: 'POST',
-          data: { userId: userId },
-          success: function (response) {
+          data: {
+            userId: userId
+          },
+          success: function(response) {
             alert(response);
           },
-          error: function () {
+          error: function() {
             alert('An error occurred while processing your request.');
           }
         });
       });
 
       // Join Group button click
-      $('.join-group-btn').click(function () {
+      $('.join-group-btn').click(function() {
         const userId = $(this).data('user-id');
 
         $.ajax({
           url: 'join_group.php',
           method: 'POST',
-          data: { userId: userId },
-          success: function (response) {
+          data: {
+            userId: userId
+          },
+          success: function(response) {
             alert(response);
           },
-          error: function () {
+          error: function() {
             alert('An error occurred while processing your join group request.');
           }
         });

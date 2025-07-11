@@ -1,7 +1,7 @@
 <?php
 session_start();
 if (!isset($_SESSION['user_id'])) {
-    header("Location: home1.php");
+    header("Location: signin1.php");
     exit();
 }
 require 'cmsql.php';

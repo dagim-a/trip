@@ -11,7 +11,14 @@
 </head>
 
 <body>
-  <?php require 'Component/navbar.php'; ?>
+  <?php
+  session_start();
+  if (!isset($_SESSION['user_id'])) {
+    header("Location: signin1.php");
+    exit();
+  }
+  require 'Component/navbar.php';
+  ?>
   <main>
     <section class="content">
       <div class="section-header">
@@ -19,7 +26,6 @@
       </div>
       </br>
       <?php
-      session_start();
       require 'cmsql.php';
 
       // Fetch all trips (optionally exclude current user's trips and if the status is not 'closed')

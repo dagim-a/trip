@@ -1,5 +1,9 @@
 <?php
 session_start();
+if (!isset($_SESSION['user_id'])) {
+    header("Location: signin1.php");
+    exit();
+}
 require 'cmsql.php';
 if (!isset($_POST['trip_id'])) {
     echo '<div style="color:red;">No trip selected.</div>';
@@ -47,4 +51,3 @@ echo '
         <p><b>Status:</b> ' . htmlspecialchars($trip['status']) . '</p>
     </div>
 </div>';
-?>

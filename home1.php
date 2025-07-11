@@ -77,16 +77,16 @@ require 'cmsql.php';
             <i class="fa-solid fa-house"></i>
             <span class="mobile-nav-label">Home</span>
         </a>
-        <a href="signup1.php" class="mobile-nav-item">
+        <a href="#" class="mobile-nav-item">
             <i class="fa-solid fa-user"></i>
             <span class="mobile-nav-label">Sign up</span>
         </a>
-        <a href="signin1.php" class="mobile-nav-item">
+        <a href="#" class="mobile-nav-item">
             <i class="fa-solid fa-user-plus"></i>
             <span class="mobile-nav-label">Login</span>
         </a>
     </nav>
-    <?php require 'Component/footer.php'; ?>
+    <?php require 'Components/footer.php'; ?>
 </body>
 
 </html>
