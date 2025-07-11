@@ -17,6 +17,7 @@
       <div class="section-header">
         <h1>Suggested Trips</h1>
       </div>
+      </br>
       <?php
       session_start();
       require 'cmsql.php';

@@ -217,28 +217,30 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                                         <div class="trip-list-date">' . htmlspecialchars($trip['Start_date']) . ' to ' . htmlspecialchars($trip['End_date']) . '</div>
                                     </div>
                                     <div style="display:flex; flex-direction: row; gap: 10px;">
-                                        <div>
-                                            <button class="view-btn" 
-                                                data-trip-id="' . $trip['Id'] . '"
-                                                data-img="' . htmlspecialchars($trip['img']) . '"
-                                                data-title="' . $title . '"
-                                                data-destination="' . htmlspecialchars($trip['Destination']) . '"
-                                                data-start="' . htmlspecialchars($trip['Start_date']) . '"
-                                                data-end="' . htmlspecialchars($trip['End_date']) . '"
-                                                data-desc="' . $desc . '"
-                                                data-email="' . htmlspecialchars($trip['Email']) . '"
-                                                data-transportation="' . htmlspecialchars($trip['transportation_type']) . '"
-                                                data-travelers="' . htmlspecialchars($trip['Number_of_Travelers']) . '"
-                                                data-cost="' . htmlspecialchars($trip['Trip_cost']) . '"
-                                                data-status="' . htmlspecialchars($trip['status']) . '"
-                                                style="border: none; padding: 7px 15px;">View</button>
-                                        </div>
-                                        <div>
-                                            <form method="POST" style="display:inline;">
-                                                <input type="hidden" name="delete_trip_id" value="' . $trip['Id'] . '">
-                                                <button type="submit" style="color:white; background: red; border: none; padding: 7px 15px;" onclick="return confirm(' . "'Are you sure you want to delete this trip?'" . ');">Delete</button>
-                                            </form>
-                                        </div>
+                                        <button class="view-btn action-btn" title="View"
+                                            data-trip-id="' . $trip['Id'] . '"
+                                            data-img="' . htmlspecialchars($trip['img']) . '"
+                                            data-title="' . $title . '"
+                                            data-destination="' . htmlspecialchars($trip['Destination']) . '"
+                                            data-start="' . htmlspecialchars($trip['Start_date']) . '"
+                                            data-end="' . htmlspecialchars($trip['End_date']) . '"
+                                            data-desc="' . $desc . '"
+                                            data-email="' . htmlspecialchars($trip['Email']) . '"
+                                            data-transportation="' . htmlspecialchars($trip['transportation_type']) . '"
+                                            data-travelers="' . htmlspecialchars($trip['Number_of_Travelers']) . '"
+                                            data-cost="' . htmlspecialchars($trip['Trip_cost']) . '"
+                                            data-status="' . htmlspecialchars($trip['status']) . '">
+                                            <i class="fa-solid fa-eye"></i>
+                                        </button>
+                                        <a href="edit_trip.php?trip_id=' . $trip['Id'] . '" class="edit-btn action-btn" title="Edit">
+                                            <i class="fa-solid fa-pen-to-square"></i>
+                                        </a>
+                                        <form method="POST" style="display:inline;">
+                                            <input type="hidden" name="delete_trip_id" value="' . $trip['Id'] . '">
+                                            <button type="submit" class="delete-btn action-btn" title="Delete" onclick="return confirm(' . "'Are you sure you want to delete this trip?'" . ');">
+                                                <i class="fa-solid fa-trash"></i>
+                                            </button>
+                                        </form>
                                     </div>
                                 </div>
                             </div>';

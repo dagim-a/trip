@@ -13,7 +13,7 @@
             <h1 class="header-title">Trip Planner</h1>
         </div>
     </a>
-    <div style="display: flex; flex-direction: row;">
+    <div style="display: flex; flex-direction: row; gap: 10px;">
         <button class="hamburger" id="hamburger">
             <i class="fa-solid fa-bars"></i>
         </button>

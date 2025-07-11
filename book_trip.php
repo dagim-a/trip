@@ -1,6 +1,7 @@
 <?php
 include('cmsql.php');
 
+
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
   $userId = $_POST['userId'];
   $tripId = $_POST['tripId'];
@@ -29,6 +30,27 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
       $close->bind_param("i", $tripId);
       $close->execute();
     }
+    // 1. Increment trip count
+    $update_trip = "UPDATE user_info SET Trip_taken = Trip_taken + 1 WHERE userId = $userId";
+    mysqli_query($conn, $update_trip);
+
+    // 2. Fetch updated trip count
+    $result = mysqli_query($conn, "SELECT Trip_taken FROM user_info WHERE userId = $userId");
+    $user_info = mysqli_fetch_assoc($result);
+    $trips_taken = $user_info['Trip_taken'];
+
+    // 3. Determine new travel level
+    if ($trips_taken < 10) {
+    $medal = "Bronze";
+    } elseif ($trips_taken < 20) {
+    $medal = "Silver";
+    } else {
+    $medal = "Gold";
+    }
+
+    // 4. Update travel level
+    $update_level = "UPDATE user_info SET Travel_level = '$medal' WHERE userId = $userId";
+    mysqli_query($conn, $update_level);
 
     echo "<script>
                 alert('🎉 You have successfully booked this trip!');
