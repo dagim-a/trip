@@ -81,3 +81,29 @@ $qur = mysqli_query($conn, $sql);
 if (!$qur) {
     echo 'could not create Booking table:' . mysqli_error($conn) . '<br>';
 }
+
+// Create group_members table
+$sql = "CREATE TABLE IF NOT EXISTS group_members (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    user_id INT NOT NULL,
+    group_id INT NOT NULL,
+    joined_at DATETIME NOT NULL,
+    UNIQUE KEY unique_group_member (user_id, group_id)
+)";
+$qur = mysqli_query($conn, $sql);
+if (!$qur) {
+    echo "could not create group_members table: " . mysqli_error($conn) . '<br>';
+}
+
+// Create notifications table
+$sql = "CREATE TABLE IF NOT EXISTS notifications (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    user_id INT NOT NULL,
+    message VARCHAR(255) NOT NULL,
+    created_at DATETIME NOT NULL,
+    is_read TINYINT(1) DEFAULT 0
+)";
+$qur = mysqli_query($conn, $sql);
+if (!$qur) {
+    echo "could not create notifications table: " . mysqli_error($conn) . '<br>';
+}

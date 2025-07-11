@@ -79,6 +79,10 @@ document.addEventListener('DOMContentLoaded', function() {
                 html += '<p><b>Number of Travelers:</b> ' + travelers + '</p>';
                 html += '<p><b>Trip Cost:</b> $' + cost + '</p>';
                 html += '<p><b>Status:</b> ' + status + '</p>';
+                html += '<div class="invite-section">';
+                html += '<input type="email" class="invite-input" placeholder="Invite by email..." />';
+                html += '<button class="invite-btn">Invite</button>';
+                html += '<div class="invite-message" style="margin-top:8px;"></div>';
                 html += '</div>';
                 html += '</div>';
                 descContent.innerHTML = html;
@@ -91,6 +95,115 @@ document.addEventListener('DOMContentLoaded', function() {
         window.addEventListener('click', function(e) {
             if (e.target === modal) {
                 modal.style.display = 'none';
+            }
+        });
+        // Invite logic
+        descContent.addEventListener('click', function(e) {
+            if (e.target.classList.contains('invite-btn')) {
+                var input = descContent.querySelector('.invite-input');
+                var message = descContent.querySelector('.invite-message');
+                var email = input.value.trim();
+                var tripId = descContent.querySelector('.view-btn')?.getAttribute('data-trip-id') || modal.getAttribute('data-trip-id');
+                if (!email) {
+                    message.textContent = 'Please enter an email.';
+                    message.style.color = 'red';
+                    return;
+                }
+                // AJAX request to invite_user.php
+                fetch('invite_user.php', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ email: email, trip_id: tripId })
+                })
+                .then(res => res.json())
+                .then(data => {
+                    if (data.success) {
+                        message.textContent = 'Invitation sent!';
+                        message.style.color = '#1a7f37';
+                        input.value = '';
+                    } else {
+                        message.textContent = data.error || 'Failed to send invitation.';
+                        message.style.color = 'red';
+                    }
+                })
+                .catch(() => {
+                    message.textContent = 'Network error.';
+                    message.style.color = 'red';
+                });
+            }
+        });
+    }
+    // Family search action buttons logic
+    if (document.querySelector('.family-list')) {
+        document.querySelector('.family-list').addEventListener('click', function(e) {
+            // Add Friend
+            if (e.target.closest('.add-friend-btn')) {
+                const btn = e.target.closest('.add-friend-btn');
+                const userId = btn.getAttribute('data-user-id');
+                let errorMsg = btn.parentElement.querySelector('.error-message');
+                if (!errorMsg) {
+                    errorMsg = document.createElement('div');
+                    errorMsg.className = 'error-message';
+                    errorMsg.style.color = 'red';
+                    errorMsg.style.fontSize = '0.95rem';
+                    errorMsg.style.marginTop = '8px';
+                    btn.parentElement.appendChild(errorMsg);
+                }
+                btn.disabled = true;
+                fetch('add_friend.php', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+                    body: 'friend_id=' + encodeURIComponent(userId)
+                })
+                .then(res => res.json())
+                .then(data => {
+                    btn.disabled = false;
+                    if (data.success) {
+                        window.location.href = 'friend_trips.php?userId=' + encodeURIComponent(userId);
+                    } else {
+                        btn.title = data.message;
+                        btn.style.background = '#dc3545';
+                        btn.style.color = '#fff';
+                        errorMsg.textContent = data.message;
+                    }
+                });
+            }
+            // Join Group
+            if (e.target.closest('.join-group-btn')) {
+                const btn = e.target.closest('.join-group-btn');
+                const userId = btn.getAttribute('data-user-id');
+                let errorMsg = btn.parentElement.querySelector('.error-message');
+                if (!errorMsg) {
+                    errorMsg = document.createElement('div');
+                    errorMsg.className = 'error-message';
+                    errorMsg.style.color = 'red';
+                    errorMsg.style.fontSize = '0.95rem';
+                    errorMsg.style.marginTop = '8px';
+                    btn.parentElement.appendChild(errorMsg);
+                }
+                btn.disabled = true;
+                fetch('join_group.php', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+                    body: 'group_id=' + encodeURIComponent(userId)
+                })
+                .then(res => res.json())
+                .then(data => {
+                    btn.disabled = false;
+                    if (data.success) {
+                        window.location.href = 'group_trips.php?groupId=' + encodeURIComponent(userId);
+                    } else {
+                        btn.title = data.message;
+                        btn.style.background = '#dc3545';
+                        btn.style.color = '#fff';
+                        errorMsg.textContent = data.message;
+                    }
+                });
+            }
+            // View Profile
+            if (e.target.closest('.view-profile-btn')) {
+                const link = e.target.closest('.view-profile-btn');
+                window.location.href = link.getAttribute('href');
             }
         });
     }

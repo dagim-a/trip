@@ -69,6 +69,47 @@
     position: relative;
     overflow: visible;
 }
+
+.invite-section {
+    display: flex;
+    gap: 10px;
+    margin-top: 16px;
+    align-items: center;
+    justify-content: center;
+}
+.invite-input {
+    padding: 8px 12px;
+    border: 1px solid #e3eaf5;
+    border-radius: 6px;
+    font-size: 1rem;
+    background: #fff;
+    outline: none;
+    transition: border 0.2s;
+    min-width: 180px;
+}
+.invite-input:focus {
+    border: 1.5px solid #1a73e8;
+}
+.invite-btn {
+    background: #1a73e8;
+    color: #fff;
+    border: none;
+    padding: 8px 22px;
+    border-radius: 6px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+.invite-btn:hover {
+    background: #174ea6;
+}
+.invite-message {
+    font-size: 0.98rem;
+    color: #1a7f37;
+    margin-left: 10px;
+}
+
 @media (max-width: 767px) {
     .trip-detail-modal-flex {
         padding: 10px 2px 10px 2px;
