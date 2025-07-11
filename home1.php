@@ -31,10 +31,10 @@ require 'cmsql.php';
             <p>Plan, personalize, and track your perfect trip</p>
             <p><strong>From custom itineraries and <br> budget tools to shared plan...</strong></p>
         </div>
-        <div class="hero-search">
+        <!-- <div class="hero-search">
             <input type="text" placeholder="Explore the world with ease">
             <button>Search</button>
-        </div>
+        </div> -->
     </div>
     <section class="section">
         <h2>Unleash Your Wanderlust</h2>
@@ -66,7 +66,7 @@ require 'cmsql.php';
     <div class="confidence">
         <h2>Plan with Confidence</h2>
         <p>With our powerful travel planner, you can create custom <br> itineraries, track your budget, and manage every detail of...</p>
-        <button>Get Started</button>
+        <button onclick="location.href='signup1.php'">Get Started</button>
     </div>
 
     <button class="hamburger" aria-label="Open menu">&#9776;</button>
