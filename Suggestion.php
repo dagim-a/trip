@@ -30,7 +30,7 @@
 
       // Fetch all trips (optionally exclude current user's trips and if the status is not 'closed')
       $current_user_id = $_SESSION['user_id'] ?? 0;
-      $sql = "SELECT t.*, u.Email AS user_email FROM Trip t JOIN user u ON t.userId = u.Id WHERE t.userId != $current_user_id AND t.status != 'closed'";
+      $sql = "SELECT t.*, u.Email AS user_email FROM Trip t JOIN user u ON t.userId = u.Id WHERE t.userId != $current_user_id AND t.status != 'closed' AND t.Number_of_Travelers > 0";
       $result = mysqli_query($conn, $sql);
       ?>
 
